@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>News | Emerging Nanoelectronics</title>
+
+  <style>
+    :root {
+      --navy: #06182e;
+      --blue: #168cff;
+      --ink: #eef4f8;
+      --muted: #a9b8c7;
+      --line: rgba(255,255,255,.12);
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 8% 18%, rgba(0,192,255,.09), transparent 24%),
+        radial-gradient(circle at 92% 22%, rgba(255,40,105,.08), transparent 25%),
+        #020b14;
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(2,12,22,.97);
+      border-bottom: 1px solid rgba(255,255,255,.10);
+    }
+
+    .nav {
+      max-width: var(--max);
+      min-height: 78px;
+      margin: auto;
+      padding: 0 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      font-size: 20px;
+      font-weight: 800;
+    }
+
+    .brand small {
+      display: block;
+      margin-top: 4px;
+      color: #aebccc;
+      font-size: 10px;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .menu {
+      display: flex;
+      gap: 24px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .menu a {
+      padding: 28px 0 24px;
+    }
+
+    .container {
+      max-width: var(--max);
+      margin: auto;
+      padding-left: 28px;
+      padding-right: 28px;
+    }
+
+    .page-head {
+      padding: 64px 0 36px;
+    }
+
+    .kicker {
+      color: var(--blue);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 7px 0 8px;
+      font-size: 46px;
+      letter-spacing: -.03em;
+    }
+
+    .lead {
+      max-width: 700px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .news-grid {
+      padding: 18px 0 80px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .news-card {
+      overflow: hidden;
+      background: rgba(5,20,34,.88);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      transition: transform .24s ease, border-color .24s ease;
+    }
+
+    .news-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(22,140,255,.55);
+    }
+
+    .news-cover {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      display: block;
+      background: #081827;
+    }
+
+    .news-card-body {
+      padding: 22px 22px 24px;
+    }
+
+    .news-date {
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .news-card h2 {
+      margin: 8px 0 9px;
+      font-size: 21px;
+      line-height: 1.35;
+    }
+
+    .news-summary {
+      color: var(--muted);
+      font-size: 13.5px;
+    }
+
+    .read-more {
+      display: inline-block;
+      margin-top: 17px;
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .empty {
+      padding: 40px 0 80px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 800px) {
+      .menu {
+        display: none;
+      }
+
+      .news-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+  <style>
+    .brand-logo {
+      display: inline-flex !important;
+      align-items: center !important;
+      flex-shrink: 0;
+      padding: 7px 0 !important;
+      line-height: 0 !important;
+    }
+
+    .brand-logo img {
+      display: block;
+      width: auto;
+      height: 58px;
+      max-width: 300px;
+      object-fit: contain;
+    }
+
+    @media (max-width: 700px) {
+      .brand-logo img {
+        height: 48px;
+        max-width: 245px;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <header class="site-header">
+    <nav class="nav">
+
+      <a class="brand brand-logo" href="index.html" aria-label="DS Han Lab. Home">
+      <img
+        src="./Images/Logo/ds-han-lab-logo.png"
+        alt="DS Han Lab."
+      >
+    </a>
+
+      <div class="menu">
+        <a href="index.html">HOME</a>
+        <a href="research.html">RESEARCH</a>
+        <a href="people.html">PEOPLE</a>
+        <a href="publications.html">PUBLICATIONS</a>
+        <a href="news.html">NEWS</a>
+      </div>
+
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <div class="page-head">
+      <div class="kicker">Group Updates</div>
+
+      <h1>News</h1>
+
+      <p class="lead">
+        Publications, research highlights, awards, and group activities
+        from the Emerging Nanoelectronics
+      </p>
+    </div>
+
+    <div
+      class="news-grid"
+      id="news-grid"
+    >
+      <div class="empty">
+        Loading news...
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    function escapeHtml(value) {
+      return String(value ?? "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    async function loadNews() {
+      const grid =
+        document.getElementById("news-grid");
+
+      try {
+        const response =
+          await fetch("./data/news.json", {
+            cache: "no-store"
+          });
+
+        if (!response.ok) {
+          throw new Error("Could not load news.");
+        }
+
+        const posts = await response.json();
+
+        if (!posts.length) {
+          grid.innerHTML =
+            '<div class="empty">No news has been posted yet.</div>';
+          return;
+        }
+
+        grid.innerHTML =
+          posts
+            .map(
+              post => `
+                <article class="news-card">
+                  ${
+                    post.cover
+                      ? `
+                        <a href="news-post.html?slug=${encodeURIComponent(post.slug)}">
+                          <img
+                            class="news-cover"
+                            src="./${escapeHtml(post.cover)}"
+                            alt="${escapeHtml(post.title)}"
+                          >
+                        </a>
+                      `
+                      : ""
+                  }
+
+                  <div class="news-card-body">
+                    <div class="news-date">
+                      ${escapeHtml(post.date)}
+                    </div>
+
+                    <h2>
+                      <a href="news-post.html?slug=${encodeURIComponent(post.slug)}">
+                        ${escapeHtml(post.title)}
+                      </a>
+                    </h2>
+
+                    <div class="news-summary">
+                      ${escapeHtml(post.summary)}
+                    </div>
+
+                    <a
+                      class="read-more"
+                      href="news-post.html?slug=${encodeURIComponent(post.slug)}"
+                    >
+                      Read more →
+                    </a>
+                  </div>
+                </article>
+              `
+            )
+            .join("");
+      }
+      catch (error) {
+        grid.innerHTML =
+          '<div class="empty">News will appear after the GitHub Pages build completes.</div>';
+      }
+    }
+
+    loadNews();
+  </script>
+<script src="./news-admin-link.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Research | Emerging Nanoelectronics</title>
+
+  <link rel="stylesheet" href="./style.css">
+
+  <style>
+    .research-main {
+      background: #ffffff;
+    }
+
+    .research-intro {
+      max-width: 860px;
+      margin-bottom: 48px;
+    }
+
+    .research-topic {
+      display: grid;
+      grid-template-columns: minmax(0, 1.06fr) minmax(0, .94fr);
+      gap: 44px;
+      align-items: center;
+      padding: 46px 0;
+      border-top: 1px solid var(--line, #e3e9ef);
+    }
+
+    .research-topic:first-of-type {
+      border-top: 0;
+      padding-top: 12px;
+    }
+
+    .research-topic:nth-child(even) .research-topic-figure {
+      order: 2;
+    }
+
+    .research-topic-figure img {
+      display: block;
+      width: 100%;
+      border-radius: 12px;
+      background: #0d2946;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, .08);
+    }
+
+    .topic-number {
+      margin-bottom: 10px;
+      color: var(--blue, #1267a8);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .research-topic-copy h2 {
+      margin: 0 0 14px;
+      font-size: 30px;
+      line-height: 1.22;
+    }
+
+    .research-topic-copy > p {
+      margin: 0;
+      color: var(--muted, #667085);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .research-points {
+      margin: 20px 0 0;
+      padding-left: 19px;
+      color: #344054;
+      font-size: 14px;
+    }
+
+    .research-points li + li {
+      margin-top: 7px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition:
+        opacity .7s ease,
+        transform .7s ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 850px) {
+      .research-topic {
+        grid-template-columns: 1fr;
+        gap: 26px;
+      }
+
+      .research-topic:nth-child(even) .research-topic-figure {
+        order: initial;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
+  </style>
+
+  <style>
+    .brand-logo {
+      display: inline-flex !important;
+      align-items: center !important;
+      flex-shrink: 0;
+      padding: 7px 0 !important;
+      line-height: 0 !important;
+    }
+
+    .brand-logo img {
+      display: block;
+      width: auto;
+      height: 58px;
+      max-width: 300px;
+      object-fit: contain;
+    }
+
+    @media (max-width: 700px) {
+      .brand-logo img {
+        height: 48px;
+        max-width: 245px;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <header class="site-header">
+    <nav class="nav">
+
+      <a class="brand brand-logo" href="index.html" aria-label="DS Han Lab. Home">
+      <img
+        src="./Images/Logo/ds-han-lab-logo.png"
+        alt="DS Han Lab."
+      >
+    </a>
+
+      <div class="menu">
+        <a href="index.html">HOME</a>
+        <a href="research.html">RESEARCH</a>
+        <a href="people.html">PEOPLE</a>
+        <a href="publications.html">PUBLICATIONS</a>
+        <a href="news.html">NEWS</a>
+        <a href="mailto:dshan@kist.re.kr">CONTACT</a>
+      </div>
+
+    </nav>
+  </header>
+
+  <div class="page-head">
+    <div class="container">
+
+      <div class="breadcrumb">
+        Home / Research
+      </div>
+
+      <h1>
+        Research
+      </h1>
+
+    </div>
+  </div>
+
+  <main class="research-main">
+
+    <div class="container section">
+
+      <div class="research-intro reveal">
+
+        <div class="kicker">
+          Research Directions
+        </div>
+
+        <h2>
+          From Fundamentals to Emerging Electronic Systems
+        </h2>
+
+        <p class="lead">
+          We combine nanoscale transport, emerging magnetic materials,
+          and magnetic-device engineering to develop new concepts
+          for future electronics and computing.
+        </p>
+
+      </div>
+
+      <!-- 01 -->
+      <section
+        id="transport"
+        class="research-topic reveal"
+      >
+
+        <div class="research-topic-figure">
+          <img
+            src="./Images/Research/transport.png"
+            alt="Spin, orbital and phonon transport for nanoelectronics"
+          >
+        </div>
+
+        <div class="research-topic-copy">
+
+          <div class="topic-number">
+            Research 01
+          </div>
+
+          <h2>
+            Spin, Orbital & Phonon Transport for Nanoelectronics
+          </h2>
+
+          <p>
+            We investigate the generation, transport and interconversion
+            of spin, orbital and phonon angular momentum in nanoscale
+            materials and heterostructures, and exploit these channels
+            to realize efficient electronic functionalities.
+          </p>
+
+          <ul class="research-points">
+            <li>Spin transport and spin-orbit torque</li>
+            <li>Orbital transport and orbitronics</li>
+            <li>Phonon-mediated angular-momentum transport</li>
+            <li>Spin–orbital–phonon interconversion for nanoelectronics</li>
+          </ul>
+
+        </div>
+
+      </section>
+
+      <!-- 02 -->
+      <section
+        id="materials"
+        class="research-topic reveal"
+      >
+
+        <div class="research-topic-figure">
+          <img
+            src="./Images/Research/emerging_materials.png"
+            alt="Antiferromagnets, altermagnets and emerging materials"
+          >
+        </div>
+
+        <div class="research-topic-copy">
+
+          <div class="topic-number">
+            Research 02
+          </div>
+
+          <h2>
+            Antiferromagnets, Altermagnets & Emerging Materials for Spintronics
+          </h2>
+
+          <p>
+            We explore antiferromagnets, altermagnets and other emerging
+            magnetic materials as platforms for new spintronic devices,
+            with emphasis on material properties and transport responses
+            that can be translated into practical device operation.
+          </p>
+
+          <ul class="research-points">
+            <li>Antiferromagnetic and altermagnetic spintronics</li>
+            <li>Emerging magnetic materials and heterostructures</li>
+            <li>Epitaxial thin-film growth and interface engineering</li>
+            <li>Electrical manipulation and detection of magnetic order</li>
+          </ul>
+
+        </div>
+
+      </section>
+
+      <!-- 03 -->
+      <section
+        id="computing"
+        class="research-topic reveal"
+      >
+
+        <div class="research-topic-figure">
+          <img
+            src="./Images/Research/mram_computing.png"
+            alt="MRAM, random telegraph noise and probabilistic computing"
+          >
+        </div>
+
+        <div class="research-topic-copy">
+
+          <div class="topic-number">
+            Research 03
+          </div>
+
+          <h2>
+            MRAM, Probabilistic Computing & Process-in-Memory
+          </h2>
+
+          <p>
+            We develop magnetic tunnel-junction devices and MRAM-based
+            computing concepts that exploit nonvolatility, stochastic
+            switching and in-memory operation for next-generation
+            information-processing architectures.
+          </p>
+
+          <ul class="research-points">
+            <li>Spin-orbit-torque and advanced MRAM</li>
+            <li>Stochastic MTJs and random-telegraph-noise devices</li>
+            <li>Probabilistic computing and p-bits</li>
+            <li>Process-in-memory and neuromorphic computing</li>
+          </ul>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+      <div>
+        <strong>Emerging Nanoelectronics</strong><br>
+        Center for Semiconductor Technology, KIST
+      </div>
+
+      <div>
+        <strong>Contact</strong><br>
+        dshan@kist.re.kr · +82-2-958-5405
+      </div>
+
+      <div>
+        © 2026 Dong-Soo Han
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    const revealElements =
+      document.querySelectorAll(".reveal");
+
+    const revealObserver =
+      new IntersectionObserver(
+        function(entries, observer) {
+
+          entries.forEach(function(entry) {
+
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            }
+
+          });
+
+        },
+        {
+          threshold: 0.12,
+          rootMargin: "0px 0px -45px 0px"
+        }
+      );
+
+    revealElements.forEach(function(element) {
+      revealObserver.observe(element);
+    });
+  </script>
+
+</body>
+</html>

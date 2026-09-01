@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>News | Emerging Nanoelectronics</title>
+
+  <style>
+    :root {
+      --blue: #168cff;
+      --text: #eaf1f7;
+      --muted: #9fB0c0;
+      --line: rgba(255,255,255,.12);
+      --max: 940px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: #020b14;
+      line-height: 1.72;
+    }
+
+    a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    .header {
+      border-bottom: 1px solid var(--line);
+      background: #03111e;
+    }
+
+    .header-inner {
+      max-width: 1180px;
+      margin: auto;
+      padding: 22px 28px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      color: #fff;
+      font-weight: 800;
+    }
+
+    .back {
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .article {
+      max-width: var(--max);
+      margin: auto;
+      padding: 65px 28px 90px;
+    }
+
+    .date {
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    h1 {
+      margin: 9px 0 17px;
+      font-size: clamp(34px, 5vw, 52px);
+      line-height: 1.13;
+      letter-spacing: -.035em;
+    }
+
+    .summary {
+      margin-bottom: 30px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .cover {
+      display: block;
+      width: 100%;
+      max-height: 560px;
+      margin: 30px 0 38px;
+      object-fit: contain;
+      background: #071522;
+      border-radius: 10px;
+    }
+
+    .body {
+      font-size: 16px;
+    }
+
+    .body img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .body h2,
+    .body h3 {
+      margin-top: 34px;
+    }
+
+    .body p {
+      margin: 16px 0;
+    }
+
+    .body blockquote {
+      margin-left: 0;
+      padding-left: 18px;
+      color: var(--muted);
+      border-left: 3px solid var(--blue);
+    }
+
+    .error {
+      color: var(--muted);
+    }
+  </style>
+
+  <style>
+    .brand-logo {
+      display: inline-flex !important;
+      align-items: center !important;
+      flex-shrink: 0;
+      padding: 7px 0 !important;
+      line-height: 0 !important;
+    }
+
+    .brand-logo img {
+      display: block;
+      width: auto;
+      height: 58px;
+      max-width: 300px;
+      object-fit: contain;
+    }
+
+    @media (max-width: 700px) {
+      .brand-logo img {
+        height: 48px;
+        max-width: 245px;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="header-inner">
+
+      <a
+        class="brand brand-logo"
+        href="index.html"
+        aria-label="DS Han Lab. Home"
+      >
+        <img
+          src="./Images/Logo/ds-han-lab-logo.png"
+          alt="DS Han Lab."
+        >
+      </a>
+
+      <a
+        class="back"
+        href="news.html"
+      >
+        ← All News
+      </a>
+
+    </div>
+  </header>
+
+  <article
+    class="article"
+    id="article"
+  >
+    <div class="error">
+      Loading news article...
+    </div>
+  </article>
+
+  <script>
+    function escapeHtml(value) {
+      return String(value ?? "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    async function loadArticle() {
+      const article =
+        document.getElementById("article");
+
+      const params =
+        new URLSearchParams(window.location.search);
+
+      const slug =
+        params.get("slug");
+
+      if (!slug) {
+        article.innerHTML =
+          '<div class="error">News article not specified.</div>';
+        return;
+      }
+
+      try {
+        const response =
+          await fetch("./data/news.json", {
+            cache: "no-store"
+          });
+
+        const posts =
+          await response.json();
+
+        const post =
+          posts.find(item => item.slug === slug);
+
+        if (!post) {
+          throw new Error("Article not found");
+        }
+
+        document.title =
+          `${post.title} | Emerging Nanoelectronics`;
+
+        article.innerHTML = `
+          <div class="date">
+            ${escapeHtml(post.date)}
+          </div>
+
+          <h1>
+            ${escapeHtml(post.title)}
+          </h1>
+
+          <div class="summary">
+            ${escapeHtml(post.summary)}
+          </div>
+
+          ${
+            post.cover
+              ? `
+                <img
+                  class="cover"
+                  src="./${escapeHtml(post.cover)}"
+                  alt="${escapeHtml(post.title)}"
+                >
+              `
+              : ""
+          }
+
+          <div class="body">
+            ${post.body_html}
+          </div>
+        `;
+      }
+      catch (error) {
+        article.innerHTML =
+          '<div class="error">This news article could not be loaded.</div>';
+      }
+    }
+
+    loadArticle();
+  </script>
+
+</body>
+</html>
