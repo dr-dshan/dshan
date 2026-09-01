@@ -1,0 +1,24 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "dshan-lab-private",
+  "main": "src/worker.js",
+  "compatibility_date": "2026-09-01",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "dshan-lab-wiki",
+      "database_id": "4c81fe7e-068b-4719-a24f-338791543476"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "FILES",
+      "bucket_name": "dshan-lab-wiki-files"
+    }
+  ],
+  "vars": {
+    "GITHUB_OWNER": "dr-dshan",
+    "GITHUB_REPO": "dshan",
+    "GITHUB_BRANCH": "main"
+  }
+}
