@@ -11,6 +11,5 @@ We are delighted to congratulate Won-Young on receiving the Seonglim Outstanding
 This well-deserved award recognizes his excellent research achievements and dedication. Congratulations, Won-Young, on this wonderful achievement! 🎉
 
 
-![🎉 Congratulations to Won-Young — Seonglim Outstanding Graduate Student Award!](Images/News/2026-07-02-congratulations-to-won-young-seonglim-outstanding-graduate-student-award-adb24b-IMG_2772.jpeg)
 
 
