@@ -34,17 +34,23 @@
     }
 
     .header {
-      border-bottom: 1px solid var(--line);
-      background: #03111e;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255,255,255,.10);
+      background: rgba(2,12,22,.97);
+      backdrop-filter: blur(10px);
     }
 
     .header-inner {
       max-width: 1180px;
+      min-height: 98px;
       margin: auto;
-      padding: 22px 28px;
+      padding: 0 28px;
       display: flex;
+      align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      gap: 30px;
     }
 
     .brand {
@@ -52,9 +58,26 @@
       font-weight: 800;
     }
 
-    .back {
-      font-size: 13px;
-      font-weight: 700;
+    .header .menu {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-left: auto;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .header .menu a {
+      display: block;
+      padding: 28px 0 24px;
+      color: rgba(255,255,255,.76);
+      border-bottom: 3px solid transparent;
+      line-height: 1.2;
+    }
+
+    .header .menu a:hover {
+      color: #fff;
+      border-bottom-color: #fff;
     }
 
     .article {
