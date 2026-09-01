@@ -1,0 +1,10 @@
+--- news.html (current)
++++ news.html (with News Admin link)
+@@ -323,5 +323,7 @@
+     loadNews();
+   </script>
+ 
++  <script src="./news-admin-link.js"></script>
++
+ </body>
+ </html>
