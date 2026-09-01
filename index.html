@@ -704,6 +704,73 @@
     }
   </style>
 
+
+  <style>
+    /* Unified header with the other public pages */
+    .site-header {
+      background: rgba(6, 24, 46, .97) !important;
+      border-bottom: 1px solid rgba(255,255,255,.08) !important;
+    }
+    .site-header .nav {
+      min-height: 98px !important;
+    }
+    .brand-logo img {
+      height: 82px !important;
+      max-width: 390px !important;
+    }
+
+    /* Mobile/tablet navigation only; desktop menu remains unchanged */
+    .mobile-menu-toggle {
+      display: none;
+      appearance: none;
+      border: 0;
+      background: transparent;
+      color: #fff;
+      cursor: pointer;
+      padding: 8px;
+      margin-left: auto;
+      line-height: 1;
+    }
+    .mobile-menu-toggle .bar {
+      display: block;
+      width: 24px;
+      height: 2px;
+      margin: 5px 0;
+      background: currentColor;
+      border-radius: 2px;
+    }
+    @media (max-width: 900px) {
+      .site-header .nav {
+        min-height: 82px !important;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+      .brand-logo img {
+        height: 66px !important;
+        max-width: 315px !important;
+      }
+      .mobile-menu-toggle { display: block; }
+      .site-header .menu {
+        display: none !important;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 10px 0 14px;
+      }
+      .site-header .menu.is-open { display: flex !important; }
+      .site-header .menu a {
+        display: block;
+        width: 100%;
+        padding: 12px 4px;
+        border-bottom: 1px solid rgba(255,255,255,.08);
+      }
+    }
+  </style>
+
 </head>
 
 <body>
@@ -723,7 +790,13 @@
       >
     </a>
 
-      <div class="menu">
+      <button class="mobile-menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-main-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <div class="menu" id="mobile-main-menu">
 
         <a
           class="active"
@@ -1147,6 +1220,33 @@
       document.querySelectorAll("[data-private-route]").forEach((a) => {
         const route = a.getAttribute("data-private-route") || "";
         a.href = PRIVATE_APP_BASE + route;
+      });
+    })();
+  </script>
+
+
+  <script>
+    (() => {
+      const toggle = document.querySelector('.mobile-menu-toggle');
+      const menu = document.querySelector('.site-header .menu');
+      if (!toggle || !menu) return;
+      toggle.addEventListener('click', () => {
+        const open = menu.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      });
+      menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+        if (window.innerWidth <= 900) {
+          menu.classList.remove('is-open');
+          toggle.setAttribute('aria-expanded','false');
+          toggle.setAttribute('aria-label','Open menu');
+        }
+      }));
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 900) {
+          menu.classList.remove('is-open');
+          toggle.setAttribute('aria-expanded','false');
+        }
       });
     })();
   </script>
