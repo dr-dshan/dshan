@@ -114,6 +114,35 @@
   
 
   <link rel="stylesheet" href="header-brand.css">
+
+  <style id="unified-mobile-nav">
+    /* Unified mobile/tablet navigation; desktop navigation is unchanged. */
+    .mobile-menu-toggle{
+      display:none; appearance:none; border:0; background:transparent;
+      color:inherit; font:inherit; cursor:pointer; padding:8px; margin-left:auto; line-height:1;
+    }
+    .mobile-menu-toggle .bar{
+      display:block; width:24px; height:2px; margin:5px 0;
+      background:currentColor; border-radius:2px;
+    }
+    @media (max-width:900px){
+      .site-header .nav,.header .header-inner{
+        position:relative; display:flex; align-items:center;
+        justify-content:space-between; flex-wrap:wrap;
+      }
+      .mobile-menu-toggle{display:block;}
+      .site-header .menu,.header .menu{
+        display:none !important; width:100%; flex-direction:column;
+        align-items:stretch; gap:0; padding:10px 0 14px;
+      }
+      .site-header .menu.is-open,.header .menu.is-open{display:flex !important;}
+      .site-header .menu a,.header .menu a{
+        display:block; width:100%; padding:12px 4px;
+        border-bottom:1px solid rgba(255,255,255,.08);
+      }
+    }
+  </style>
+
 </head>
 
 <body>
@@ -121,15 +150,19 @@
   <header class="site-header">
     <nav class="nav">
 
-      <a class="brand brand-logo" href="index.html" aria-label="DS Han Lab. Home">
+      <a class="brand brand-logo" href="./" aria-label="DS Han Lab. Home">
       <img
         src="./Images/Logo/ds-han-lab-logo.png"
         alt="DS Han Lab."
       >
     </a>
 
-      <div class="menu">
-        <a href="index.html">HOME</a>
+      <button class="mobile-menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-main-menu">
+  <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+</button>
+
+      <div class="menu" id="mobile-main-menu">
+        <a href="./">HOME</a>
         <a href="research.html">RESEARCH</a>
         <a href="people.html">PEOPLE</a>
         <a href="publications.html">PUBLICATIONS</a>
@@ -353,6 +386,36 @@
       revealObserver.observe(element);
     });
   </script>
+
+  
+<script id="unified-mobile-nav-script">
+(function(){
+  const toggle=document.querySelector('.mobile-menu-toggle');
+  const menu=document.querySelector('.site-header .menu, .header .menu');
+  if(!toggle||!menu)return;
+  toggle.addEventListener('click',function(){
+    const open=menu.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded',open?'true':'false');
+    toggle.setAttribute('aria-label',open?'Close menu':'Open menu');
+  });
+  menu.querySelectorAll('a').forEach(function(link){
+    link.addEventListener('click',function(){
+      if(window.innerWidth<=900){
+        menu.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded','false');
+        toggle.setAttribute('aria-label','Open menu');
+      }
+    });
+  });
+  window.addEventListener('resize',function(){
+    if(window.innerWidth>900){
+      menu.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded','false');
+      toggle.setAttribute('aria-label','Open menu');
+    }
+  });
+})();
+</script>
 
   <script src="./private-app-config.js"></script>
 </body>
