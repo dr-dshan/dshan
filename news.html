@@ -111,6 +111,24 @@
       font-size: 16px;
     }
 
+
+    .news-admin-button {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 9px 13px;
+      border: 1px solid rgba(22,140,255,.58);
+      border-radius: 6px;
+      background: rgba(22,140,255,.12);
+      color: #eef4f8;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .02em;
+    }
+    .news-admin-button:hover {
+      background: rgba(22,140,255,.22);
+    }
+
     .news-grid {
       padding: 18px 0 80px;
       display: grid;
@@ -184,31 +202,9 @@
     }
   </style>
 
-  <style>
-    .brand-logo {
-      display: inline-flex !important;
-      align-items: center !important;
-      flex-shrink: 0;
-      padding: 7px 0 !important;
-      line-height: 0 !important;
-    }
+  
 
-    .brand-logo img {
-      display: block;
-      width: auto;
-      height: 58px;
-      max-width: 300px;
-      object-fit: contain;
-    }
-
-    @media (max-width: 700px) {
-      .brand-logo img {
-        height: 48px;
-        max-width: 245px;
-      }
-    }
-  </style>
-
+  <link rel="stylesheet" href="header-brand.css">
 </head>
 
 <body>
@@ -229,6 +225,9 @@
         <a href="people.html">PEOPLE</a>
         <a href="publications.html">PUBLICATIONS</a>
         <a href="news.html">NEWS</a>
+        <a href="mailto:dshan@kist.re.kr">CONTACT</a>
+      
+        <a href="#" data-private-route="/wiki">WIKI</a>
       </div>
 
     </nav>
@@ -245,6 +244,8 @@
         Publications, research highlights, awards, and group activities
         from the Emerging Nanoelectronics
       </p>
+
+      <a class="news-admin-button" href="#" data-private-route="/news-admin">✎ Write News</a>
     </div>
 
     <div
@@ -344,7 +345,7 @@
 
     loadNews();
   </script>
-<script src="./news-admin-link.js"></script>
 
+  <script src="./private-app-config.js"></script>
 </body>
 </html>

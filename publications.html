@@ -9,31 +9,9 @@
 
   <link rel="stylesheet" href="./style.css">
 
-  <style>
-    .brand-logo {
-      display: inline-flex !important;
-      align-items: center !important;
-      flex-shrink: 0;
-      padding: 7px 0 !important;
-      line-height: 0 !important;
-    }
+  
 
-    .brand-logo img {
-      display: block;
-      width: auto;
-      height: 58px;
-      max-width: 300px;
-      object-fit: contain;
-    }
-
-    @media (max-width: 700px) {
-      .brand-logo img {
-        height: 48px;
-        max-width: 245px;
-      }
-    }
-  </style>
-
+  <link rel="stylesheet" href="header-brand.css">
 </head>
 
 <body>
@@ -54,7 +32,9 @@
       <a href="publications.html">PUBLICATIONS</a>
       <a href="news.html">NEWS</a>
       <a href="mailto:dshan@kist.re.kr">CONTACT</a>
-    </div>
+    
+        <a href="#" data-private-route="/wiki">WIKI</a>
+      </div>
   </nav>
 </header>
 
@@ -222,5 +202,6 @@
   </div>
 </footer>
 
+  <script src="./private-app-config.js"></script>
 </body>
 </html>

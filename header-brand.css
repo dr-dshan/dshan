@@ -1,0 +1,36 @@
+/* =========================================================
+   DS Han Lab — unified header branding
+   ========================================================= */
+.site-header .nav,
+.header-inner {
+  min-height: 98px;
+}
+
+.brand-logo {
+  display: inline-flex !important;
+  align-items: center !important;
+  flex: 0 0 auto !important;
+  padding: 7px 0 !important;
+  line-height: 0 !important;
+}
+
+.brand-logo img {
+  display: block !important;
+  width: auto !important;
+  height: 82px !important;
+  max-width: 390px !important;
+  object-fit: contain !important;
+  object-position: left center !important;
+}
+
+@media (max-width: 700px) {
+  .site-header .nav,
+  .header-inner {
+    min-height: 82px;
+  }
+
+  .brand-logo img {
+    height: 66px !important;
+    max-width: 315px !important;
+  }
+}
