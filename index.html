@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Emerging Nanoelectronics | KIST</title>
+  <title>AED Lab. | KIST</title>
 
 <script>
 if (window.location.pathname.endsWith('/index.html')) {
@@ -519,31 +519,66 @@ if (window.location.pathname.endsWith('/index.html')) {
         linear-gradient(115deg, #020b14 0%, #03121f 48%, #050914 100%);
     }
 
+    /* Spintronics / MRAM / computing inspired hero field.
+       Keeps the existing cyan-magenta-navy palette, but replaces the
+       generic particle field with circuit traces, memory cells and spin orbits. */
     .hero-particles {
-      opacity: .95;
+      position: absolute;
+      inset: 0;
+      opacity: .82;
       background-image:
-        radial-gradient(circle, rgba(0, 203, 255, .92) 0 1.25px, transparent 1.45px),
-        radial-gradient(circle, rgba(255, 48, 107, .78) 0 1.1px, transparent 1.35px),
-        radial-gradient(circle, rgba(57, 118, 255, .75) 0 1.05px, transparent 1.3px);
+        /* MRAM / logic node array */
+        radial-gradient(circle, rgba(0, 203, 255, .95) 0 1.25px, transparent 1.55px),
+        radial-gradient(circle, rgba(255, 48, 107, .82) 0 1.1px, transparent 1.4px),
+        /* horizontal + vertical interconnect grid */
+        linear-gradient(rgba(0, 196, 255, .075) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 196, 255, .075) 1px, transparent 1px);
       background-size:
-        25px 25px,
-        31px 31px,
-        38px 38px;
+        48px 48px,
+        96px 96px,
+        96px 96px,
+        96px 96px;
       background-position:
-        0 3px,
-        13px 10px,
-        5px 18px;
+        0 0,
+        24px 24px,
+        0 0,
+        0 0;
+      -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,.92), rgba(0,0,0,.58));
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,.92), rgba(0,0,0,.58));
     }
 
+    /* Large spin-precession / orbital rings */
+    .home-hero::before {
+      content: "";
+      position: absolute;
+      width: 470px;
+      height: 470px;
+      left: -115px;
+      top: 92px;
+      border: 1px solid rgba(0, 203, 255, .28);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 52px rgba(0, 203, 255, .025),
+        0 0 0 105px rgba(0, 203, 255, .018);
+      transform: rotate(-18deg) scaleY(.42);
+      pointer-events: none;
+    }
+
+    /* Circuit traces + a second magenta spin/orbit motif */
     .home-hero::after {
       content: "";
       position: absolute;
       inset: 0;
       pointer-events: none;
-      opacity: .48;
+      opacity: .68;
       background:
-        linear-gradient(16deg, transparent 48%, rgba(0, 184, 255, .22) 48.15%, transparent 48.35%),
-        linear-gradient(-9deg, transparent 57%, rgba(255, 52, 112, .18) 57.15%, transparent 57.35%);
+        radial-gradient(ellipse 245px 82px at 86% 28%, transparent 48%, rgba(255, 48, 107, .28) 49%, rgba(255, 48, 107, .28) 50%, transparent 51%),
+        radial-gradient(circle 5px at 78% 28%, rgba(255, 48, 107, .9) 0 38%, transparent 42%),
+        radial-gradient(circle 5px at 93% 28%, rgba(0, 203, 255, .9) 0 38%, transparent 42%),
+        linear-gradient(0deg, transparent 73%, rgba(0, 203, 255, .20) 73.15%, rgba(0, 203, 255, .20) 73.35%, transparent 73.5%),
+        linear-gradient(90deg, transparent 82%, rgba(255, 48, 107, .17) 82.12%, rgba(255, 48, 107, .17) 82.32%, transparent 82.45%),
+        linear-gradient(24deg, transparent 47%, rgba(0, 184, 255, .20) 47.12%, transparent 47.32%),
+        linear-gradient(-13deg, transparent 60%, rgba(255, 52, 112, .16) 60.12%, transparent 60.32%);
     }
 
     .hero-content {
@@ -781,48 +816,6 @@ if (window.location.pathname.endsWith('/index.html')) {
     }
   </style>
 
-
-  <style id="home-recruitment-note-style">
-    .hero-recruitment {
-      max-width: 820px;
-      margin: 30px auto 0;
-      padding: 17px 22px 18px;
-      color: rgba(235,244,250,.82);
-      background: rgba(5,24,40,.48);
-      border: 1px solid rgba(64,190,230,.24);
-      border-left: 3px solid #25b9e8;
-      border-radius: 8px;
-      text-align: left;
-      font-size: 13.5px;
-      line-height: 1.65;
-      backdrop-filter: blur(5px);
-    }
-    .hero-recruitment strong {
-      color: #fff;
-    }
-    .hero-recruitment .recruit-label {
-      display: inline-block;
-      margin-right: 8px;
-      color: #48cdf2;
-      font-size: 10px;
-      font-weight: 900;
-      letter-spacing: .15em;
-      text-transform: uppercase;
-    }
-    .hero-recruitment a {
-      color: #72d8f5;
-      font-weight: 800;
-    }
-    @media (max-width: 600px) {
-      .hero-recruitment {
-        margin-top: 24px;
-        padding: 15px 17px;
-        font-size: 12.5px;
-        line-height: 1.6;
-      }
-    }
-  </style>
-
 </head>
 
 <body>
@@ -912,16 +905,6 @@ if (window.location.pathname.endsWith('/index.html')) {
         nanoelectronic devices and next-generation computing technologies,
         including MRAM, probabilistic computing, and process-in-memory.
       </p>
-
-      <div class="hero-recruitment">
-        <span class="recruit-label">Join Our Group</span>
-        <strong>We are always looking for motivated Ph.D. students, postdoctoral researchers, and research interns/visiting trainees to join our group.</strong>
-        Graduate students may join through KIST–university joint graduate programs and conduct their research at KIST while pursuing their degree at a partner university.
-        Applicants with backgrounds in materials science, physics, electrical engineering, or related fields are welcome.
-        Interested candidates are encouraged to contact
-        <a href="mailto:dshan@kist.re.kr">Dr. Dong-Soo Han</a>
-        with a brief introduction and CV.
-      </div>
 
     </div>
 
@@ -1121,7 +1104,7 @@ if (window.location.pathname.endsWith('/index.html')) {
     <div class="footer-inner">
 
       <div>
-        <strong>Advanced Electronic Devices Lab (AED Lab.) </strong><br>
+        <strong>Emerging Nanoelectronics</strong><br>
         Center for Semiconductor Technology, KIST
       </div>
 
