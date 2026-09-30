@@ -699,3 +699,13 @@ h2 {
     max-width: 315px;
   }
 }
+
+/* Keep the longer RESEARCH OUTPUTS item visually identical to the other nav items. */
+.menu a[href="publications.html"],
+.menu a[href="./publications.html"] {
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  white-space: nowrap;
+  letter-spacing: normal;
+}

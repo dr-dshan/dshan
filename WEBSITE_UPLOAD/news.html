@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>News | Emerging Nanoelectronics</title>
+  <title>News | Advanced Electronic Devices Lab (AED Lab.)</title>
 
   <style>
     :root {
@@ -111,6 +111,24 @@
       font-size: 16px;
     }
 
+
+    .news-admin-button {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 9px 13px;
+      border: 1px solid rgba(22,140,255,.58);
+      border-radius: 6px;
+      background: rgba(22,140,255,.12);
+      color: #eef4f8;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .02em;
+    }
+    .news-admin-button:hover {
+      background: rgba(22,140,255,.22);
+    }
+
     .news-grid {
       padding: 18px 0 80px;
       display: grid;
@@ -184,27 +202,34 @@
     }
   </style>
 
-  <style>
-    .brand-logo {
-      display: inline-flex !important;
-      align-items: center !important;
-      flex-shrink: 0;
-      padding: 7px 0 !important;
-      line-height: 0 !important;
-    }
+  
 
-    .brand-logo img {
-      display: block;
-      width: auto;
-      height: 58px;
-      max-width: 300px;
-      object-fit: contain;
-    }
+  <link rel="stylesheet" href="header-brand.css">
 
-    @media (max-width: 700px) {
-      .brand-logo img {
-        height: 48px;
-        max-width: 245px;
+  <style id="unified-mobile-nav">
+    /* Unified mobile/tablet navigation; desktop navigation is unchanged. */
+    .mobile-menu-toggle{
+      display:none; appearance:none; border:0; background:transparent;
+      color:inherit; font:inherit; cursor:pointer; padding:8px; margin-left:auto; line-height:1;
+    }
+    .mobile-menu-toggle .bar{
+      display:block; width:24px; height:2px; margin:5px 0;
+      background:currentColor; border-radius:2px;
+    }
+    @media (max-width:900px){
+      .site-header .nav,.header .header-inner{
+        position:relative; display:flex; align-items:center;
+        justify-content:space-between; flex-wrap:wrap;
+      }
+      .mobile-menu-toggle{display:block;}
+      .site-header .menu,.header .menu{
+        display:none !important; width:100%; flex-direction:column;
+        align-items:stretch; gap:0; padding:10px 0 14px;
+      }
+      .site-header .menu.is-open,.header .menu.is-open{display:flex !important;}
+      .site-header .menu a,.header .menu a{
+        display:block; width:100%; padding:12px 4px;
+        border-bottom:1px solid rgba(255,255,255,.08);
       }
     }
   </style>
@@ -216,19 +241,26 @@
   <header class="site-header">
     <nav class="nav">
 
-      <a class="brand brand-logo" href="index.html" aria-label="DS Han Lab. Home">
+      <a class="brand brand-logo" href="./" aria-label="DS Han Lab. Home">
       <img
         src="./Images/Logo/ds-han-lab-logo.png"
         alt="DS Han Lab."
       >
     </a>
 
-      <div class="menu">
-        <a href="index.html">HOME</a>
+      <button class="mobile-menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-main-menu">
+  <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+</button>
+
+      <div class="menu" id="mobile-main-menu">
+        <a href="./">HOME</a>
         <a href="research.html">RESEARCH</a>
         <a href="people.html">PEOPLE</a>
-        <a href="publications.html">PUBLICATIONS</a>
+        <a href="publications.html">RESEARCH OUTPUTS</a>
         <a href="news.html">NEWS</a>
+        <a href="mailto:dshan@kist.re.kr">CONTACT</a>
+      
+        <a href="#" data-private-route="/wiki">WIKI</a>
       </div>
 
     </nav>
@@ -243,8 +275,10 @@
 
       <p class="lead">
         Publications, research highlights, awards, and group activities
-        from the Emerging Nanoelectronics
+        from the Advanced Electronic Devices Lab (AED Lab.)
       </p>
+
+      <a class="news-admin-button" href="#" data-private-route="/news-admin">✎ Write News</a>
     </div>
 
     <div
@@ -344,7 +378,37 @@
 
     loadNews();
   </script>
-<script src="./news-admin-link.js"></script>
 
+  
+<script id="unified-mobile-nav-script">
+(function(){
+  const toggle=document.querySelector('.mobile-menu-toggle');
+  const menu=document.querySelector('.site-header .menu, .header .menu');
+  if(!toggle||!menu)return;
+  toggle.addEventListener('click',function(){
+    const open=menu.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded',open?'true':'false');
+    toggle.setAttribute('aria-label',open?'Close menu':'Open menu');
+  });
+  menu.querySelectorAll('a').forEach(function(link){
+    link.addEventListener('click',function(){
+      if(window.innerWidth<=900){
+        menu.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded','false');
+        toggle.setAttribute('aria-label','Open menu');
+      }
+    });
+  });
+  window.addEventListener('resize',function(){
+    if(window.innerWidth>900){
+      menu.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded','false');
+      toggle.setAttribute('aria-label','Open menu');
+    }
+  });
+})();
+</script>
+
+  <script src="./private-app-config.js"></script>
 </body>
 </html>

@@ -5,125 +5,126 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>People | Emerging Nanoelectronics</title>
+  <title>People | Advanced Electronic Devices Lab (AED Lab.)</title>
 
   <link rel="stylesheet" href="./style.css">
 
+  
+
+  <link rel="stylesheet" href="header-brand.css">
+
   <style>
-    .brand-logo {
-      display: inline-flex !important;
-      align-items: center !important;
-      flex-shrink: 0;
-      padding: 7px 0 !important;
-      line-height: 0 !important;
+    /* Mobile navigation only — desktop layout remains unchanged */
+    .mobile-menu-toggle {
+      display: none;
+      appearance: none;
+      border: 0;
+      background: transparent;
+      color: inherit;
+      font: inherit;
+      cursor: pointer;
+      padding: 8px;
+      line-height: 1;
     }
-    .member-photo-placeholder {
-      position: relative;
-    
-      width: 120px;
-      height: 120px;
-    
-      flex: 0 0 120px;
-    
-      border-radius: 50%;
-    
-      background: #253445;
-    
-      border: 1px solid rgba(255, 255, 255, 0.18);
-    
-      overflow: hidden;
-    }
-    
-    /* Head */
-    .member-photo-placeholder::before {
-      content: "";
-    
-      position: absolute;
-    
-      width: 34px;
-      height: 34px;
-    
-      left: 50%;
-      top: 24px;
-    
-      transform: translateX(-50%);
-    
-      border-radius: 50%;
-    
-      background: #9aa7b5;
-    }
-    
-    /* Body */
-    .member-photo-placeholder::after {
-      content: "";
-    
-      position: absolute;
-    
-      width: 64px;
-      height: 42px;
-    
-      left: 50%;
-      bottom: 18px;
-    
-      transform: translateX(-50%);
-    
-      border-radius: 34px 34px 18px 18px;
-    
-      background: #9aa7b5;
-    }
-    .brand-logo img {
+
+    .mobile-menu-toggle .bar {
       display: block;
-      width: auto;
-      height: 58px;
-      max-width: 300px;
-      object-fit: contain;
+      width: 24px;
+      height: 2px;
+      margin: 5px 0;
+      background: currentColor;
+      border-radius: 2px;
     }
 
-    @media (max-width: 700px) {
-      .brand-logo img {
-        height: 48px;
-        max-width: 245px;
-      }
-    }
-
-    .linkedin-dot {
+    .linkedin-icon, .scholar-icon {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 24px;
-      height: 24px;
-      border-radius: 4px;
-      background: #0a66c2;
-      color: #ffffff;
-      font-size: 14px;
-      font-weight: 800;
+      width: 22px;
+      height: 22px;
+      flex: 0 0 22px;
+      font-size: 13px;
+      font-weight: 700;
       line-height: 1;
-      letter-spacing: -0.5px;
     }
 
-  </style>
+    .linkedin-icon {
+      border-radius: 3px;
+      background: #0A66C2;
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
 
+    .scholar-icon {
+      position: relative;
+      color: #4285F4;
+      font-family: Georgia, serif;
+      font-size: 18px;
+    }
+
+    @media (max-width: 720px) {
+      .site-header .nav {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+
+      .mobile-menu-toggle {
+        display: block;
+        margin-left: auto;
+      }
+
+      .site-header .menu {
+        display: none !important;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 10px 0 14px;
+      }
+
+      .site-header .menu.is-open {
+        display: flex !important;
+      }
+
+      .site-header .menu a {
+        display: block;
+        width: 100%;
+        padding: 12px 4px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
 <header class="site-header">
   <nav class="nav">
-    <a class="brand brand-logo" href="index.html" aria-label="DS Han Lab. Home">
+    <a class="brand brand-logo" href="./" aria-label="DS Han Lab. Home">
       <img
         src="./Images/Logo/ds-han-lab-logo.png"
         alt="DS Han Lab."
       >
     </a>
 
-    <div class="menu">
-      <a href="index.html">HOME</a>
+    <button class="mobile-menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-main-menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <div class="menu" id="mobile-main-menu">
+      <a href="./">HOME</a>
       <a href="research.html">RESEARCH</a>
       <a href="people.html">PEOPLE</a>
-      <a href="publications.html">PUBLICATIONS</a>
+      <a href="publications.html">RESEARCH OUTPUTS</a>
       <a href="news.html">NEWS</a>
       <a href="mailto:dshan@kist.re.kr">CONTACT</a>
-    </div>
+    
+        <a href="#" data-private-route="/wiki">WIKI</a>
+      </div>
   </nav>
 </header>
 
@@ -189,10 +190,19 @@
             href="https://www.linkedin.com/in/dong-soo-han-2aa0931b1"
             target="_blank"
             rel="noopener"
-            aria-label="Dong-Soo Han on LinkedIn"
           >
-            <span class="linkedin-dot">in</span>
+            <span class="linkedin-icon">in</span>
             LinkedIn
+          </a>
+
+          <a
+            class="profile-link"
+            href="https://scholar.google.com/citations?user=QI0WlzoAAAAJ&amp;hl=en"
+            target="_blank"
+            rel="noopener"
+          >
+            <span class="scholar-icon" aria-hidden="true">◆</span>
+            Google Scholar
           </a>
         </div>
 
@@ -278,7 +288,7 @@
     </div>
 
     <div class="member-history">
-      <div>[2021.07 – 2024.08] Department of Emerging Materials Science, DGIST</div>
+      <div>[2017.03 – 2024.08] Department of Emerging Materials Science, DGIST</div>
       <div>[2024.09 – Present] Center for Semiconductor Technology, KIST</div>
     </div>
 
@@ -372,8 +382,8 @@
     </div>
 
     <div class="member-history">
-      <div>[2021.11 – Present] Center for Semiconductor Technology, KIST</div>
-      <div>[2022.09 – Present] Department of Materials Science & Engineering, Seoul National University</div>
+      <div>[2021.10 – Present] Center for Semiconductor Technology, KIST</div>
+      <div>[2023.03 – Present] Department of Materials Science & Engineering, Seoul National University</div>
       <div>Co-advisor: Prof. Hyejin Jang</div>
     </div>
 
@@ -423,7 +433,8 @@
     </div>
 
     <div class="member-interest">
-      # Orbital transport
+      # Orbitronics<br>
+      # MTJ based on chiral materials
     </div>
   </div>
 </article> <article class="member-row reveal">
@@ -461,7 +472,7 @@
     </div>
 
     <div class="member-interest">
-      # Electric-field controlled magnetism, antiferromagentic MRAM
+      # Next-generation MRAM based on synthetic multiferroics and antiferromagnets
     </div>
   </div>
 </article>
@@ -514,13 +525,13 @@
     </div>
 
     <div class="member-interest">
-      # MTJ-based process-in-memory (PIM) computing<br>
       # Probabilistic computing based on stochastic MTJs<br>
       # MTJ device fabrication and characterization
     </div>
   </div>
 </article>
-     </div>
+      
+      </div>
     </div>
   </section>
 
@@ -535,17 +546,17 @@
     </h2>
 
     <div class="alumni-grid">
+     <article class="alumni-card reveal">
+  <h3>Mr. Min-Jun Kim</h3>
+  <p>Former Undergraduate Research Intern · 2026.07 – 2026.08</p>
+  <p><strong>Currently @</strong> Kyung Hee University · Bachelor Student</p>
+</article>
+     <article class="alumni-card reveal">
+  <h3>Mr. Sung-Jun Park</h3>
+  <p>Former Undergraduate Research Intern · 2026.07 – 2026.08</p>
+  <p><strong>Currently @</strong> Kyung Hee University · Bachelor Student</p>
+</article>
       <article class="alumni-card reveal">
- <h3>Mr. Min-Jun Kim</h3>
-  <p>Former Undergraduate Research Intern · 2026.07 – 2026.08</p>
-  <p><strong>Currently @</strong> Kyoung Hee University, Bachelor Student</p>
-</article>
-<article class="alumni-card reveal">
- <h3>Mr. Sung-Jun Park</h3>
-  <p>Former Undergraduate Research Intern · 2026.07 – 2026.08</p>
-  <p><strong>Currently @</strong> Kyoung Hee University, Bachelor Student</p>
-</article>
-<article class="alumni-card reveal">
   <h3>Mr. Ki-Mun Seol</h3>
   <p>Former Undergraduate Research Intern · 2026.01 – 2026.06</p>
   <p><strong>Currently @</strong> Hanyang University · Ph.D. Candidate</p>
@@ -553,17 +564,17 @@
 <article class="alumni-card reveal">
   <h3>Ms. Chae-Eun Oh</h3>
   <p>Former Research Intern · 2025.11 – 2026.05</p>
-  <p><strong>Currently @</strong> Eugene Technology · R&D Researcher</p>
+  <p><strong>Currently @</strong> Eugene Technology · Senior Researcher</p>
 </article>
 <article class="alumni-card reveal">
   <h3>Dr. Joon-Hyun Kwon</h3>
-  <p>Former Postdoctoral Researcher · 2020.09 – 2020.10</p>
+  <p>Former Postdoctoral Researcher · 2019.09 – 2020.10</p>
   <p><strong>Currently @</strong> Hyundai Motor Company, Uiwang R&D Center · Principal Researcher</p>
 </article>
 <article class="alumni-card reveal">
   <h3>Dr. Min-Seung Jung</h3>
   <p>Former Postdoctoral Researcher · 2020.11 – 2021.07</p>
-  <p><strong>Currently @</strong> SK hynix, Future Technology Research Center · Technical Leader</p>
+  <p><strong>Currently @</strong> SK hynix, Future Technology Research Center · Principal Researcher</p>
 </article>
 <article class="alumni-card reveal">
   <h3>Mr. Jong-Bum Choi</h3>
@@ -586,7 +597,7 @@
 <footer class="footer">
   <div class="footer-inner">
     <div>
-      <strong>Emerging Nanoelectronics</strong><br>
+      <strong>Advanced Electronic Devices Lab (AED Lab.)</strong><br>
       Center for Semiconductor Technology, KIST
     </div>
 
@@ -622,5 +633,38 @@
   });
 </script>
 
+
+<script>
+  (function () {
+    const toggle = document.querySelector('.mobile-menu-toggle');
+    const menu = document.querySelector('.site-header .menu');
+    if (!toggle || !menu) return;
+
+    toggle.addEventListener('click', function () {
+      const open = menu.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    });
+
+    menu.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        if (window.innerWidth <= 720) {
+          menu.classList.remove('is-open');
+          toggle.setAttribute('aria-expanded', 'false');
+          toggle.setAttribute('aria-label', 'Open menu');
+        }
+      });
+    });
+
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 720) {
+        menu.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Open menu');
+      }
+    });
+  })();
+</script>
+  <script src="./private-app-config.js"></script>
 </body>
 </html>

@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>News | Emerging Nanoelectronics</title>
+  <title>News | Advanced Electronic Devices Lab (AED Lab.)</title>
 
   <style>
     :root {
@@ -34,17 +34,23 @@
     }
 
     .header {
-      border-bottom: 1px solid var(--line);
-      background: #03111e;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255,255,255,.10);
+      background: rgba(2,12,22,.97);
+      backdrop-filter: blur(10px);
     }
 
     .header-inner {
       max-width: 1180px;
+      min-height: 98px;
       margin: auto;
-      padding: 22px 28px;
+      padding: 0 28px;
       display: flex;
+      align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      gap: 30px;
     }
 
     .brand {
@@ -52,9 +58,26 @@
       font-weight: 800;
     }
 
-    .back {
-      font-size: 13px;
-      font-weight: 700;
+    .header .menu {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-left: auto;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .header .menu a {
+      display: block;
+      padding: 28px 0 24px;
+      color: rgba(255,255,255,.76);
+      border-bottom: 3px solid transparent;
+      line-height: 1.2;
+    }
+
+    .header .menu a:hover {
+      color: #fff;
+      border-bottom-color: #fff;
     }
 
     .article {
@@ -123,27 +146,34 @@
     }
   </style>
 
-  <style>
-    .brand-logo {
-      display: inline-flex !important;
-      align-items: center !important;
-      flex-shrink: 0;
-      padding: 7px 0 !important;
-      line-height: 0 !important;
-    }
+  
 
-    .brand-logo img {
-      display: block;
-      width: auto;
-      height: 58px;
-      max-width: 300px;
-      object-fit: contain;
-    }
+  <link rel="stylesheet" href="header-brand.css">
 
-    @media (max-width: 700px) {
-      .brand-logo img {
-        height: 48px;
-        max-width: 245px;
+  <style id="unified-mobile-nav">
+    /* Unified mobile/tablet navigation; desktop navigation is unchanged. */
+    .mobile-menu-toggle{
+      display:none; appearance:none; border:0; background:transparent;
+      color:inherit; font:inherit; cursor:pointer; padding:8px; margin-left:auto; line-height:1;
+    }
+    .mobile-menu-toggle .bar{
+      display:block; width:24px; height:2px; margin:5px 0;
+      background:currentColor; border-radius:2px;
+    }
+    @media (max-width:900px){
+      .site-header .nav,.header .header-inner{
+        position:relative; display:flex; align-items:center;
+        justify-content:space-between; flex-wrap:wrap;
+      }
+      .mobile-menu-toggle{display:block;}
+      .site-header .menu,.header .menu{
+        display:none !important; width:100%; flex-direction:column;
+        align-items:stretch; gap:0; padding:10px 0 14px;
+      }
+      .site-header .menu.is-open,.header .menu.is-open{display:flex !important;}
+      .site-header .menu a,.header .menu a{
+        display:block; width:100%; padding:12px 4px;
+        border-bottom:1px solid rgba(255,255,255,.08);
       }
     }
   </style>
@@ -157,7 +187,7 @@
 
       <a
         class="brand brand-logo"
-        href="index.html"
+        href="./"
         aria-label="DS Han Lab. Home"
       >
         <img
@@ -166,12 +196,18 @@
         >
       </a>
 
-      <a
-        class="back"
-        href="news.html"
-      >
-        ← All News
-      </a>
+      <button class="mobile-menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-main-menu">
+  <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+</button>
+<div class="menu" id="mobile-main-menu">
+  <a href="./">HOME</a>
+  <a href="research.html">RESEARCH</a>
+  <a href="people.html">PEOPLE</a>
+  <a href="publications.html">RESEARCH OUTPUTS</a>
+  <a href="news.html">NEWS</a>
+  <a href="mailto:dshan@kist.re.kr">CONTACT</a>
+  <a href="#" data-private-route="/wiki">WIKI</a>
+</div>
 
     </div>
   </header>
@@ -228,7 +264,7 @@
         }
 
         document.title =
-          `${post.title} | Emerging Nanoelectronics`;
+          `${post.title} | Advanced Electronic Devices Lab (AED Lab.)`;
 
         article.innerHTML = `
           <div class="date">
@@ -269,5 +305,36 @@
     loadArticle();
   </script>
 
+  
+<script id="unified-mobile-nav-script">
+(function(){
+  const toggle=document.querySelector('.mobile-menu-toggle');
+  const menu=document.querySelector('.site-header .menu, .header .menu');
+  if(!toggle||!menu)return;
+  toggle.addEventListener('click',function(){
+    const open=menu.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded',open?'true':'false');
+    toggle.setAttribute('aria-label',open?'Close menu':'Open menu');
+  });
+  menu.querySelectorAll('a').forEach(function(link){
+    link.addEventListener('click',function(){
+      if(window.innerWidth<=900){
+        menu.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded','false');
+        toggle.setAttribute('aria-label','Open menu');
+      }
+    });
+  });
+  window.addEventListener('resize',function(){
+    if(window.innerWidth>900){
+      menu.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded','false');
+      toggle.setAttribute('aria-label','Open menu');
+    }
+  });
+})();
+</script>
+
+  <script src="./private-app-config.js"></script>
 </body>
 </html>

@@ -5,7 +5,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Emerging Nanoelectronics | KIST</title>
+  <title>AED Lab. | KIST</title>
+
+<script>
+if (window.location.pathname.endsWith('/index.html')) {
+  window.location.replace(
+    window.location.pathname.replace(/index\.html$/, '') +
+    window.location.search +
+    window.location.hash
+  );
+}
+</script>
 
   <style>
     :root {
@@ -509,31 +519,66 @@
         linear-gradient(115deg, #020b14 0%, #03121f 48%, #050914 100%);
     }
 
+    /* Spintronics / MRAM / computing inspired hero field.
+       Keeps the existing cyan-magenta-navy palette, but replaces the
+       generic particle field with circuit traces, memory cells and spin orbits. */
     .hero-particles {
-      opacity: .95;
+      position: absolute;
+      inset: 0;
+      opacity: .82;
       background-image:
-        radial-gradient(circle, rgba(0, 203, 255, .92) 0 1.25px, transparent 1.45px),
-        radial-gradient(circle, rgba(255, 48, 107, .78) 0 1.1px, transparent 1.35px),
-        radial-gradient(circle, rgba(57, 118, 255, .75) 0 1.05px, transparent 1.3px);
+        /* MRAM / logic node array */
+        radial-gradient(circle, rgba(0, 203, 255, .95) 0 1.25px, transparent 1.55px),
+        radial-gradient(circle, rgba(255, 48, 107, .82) 0 1.1px, transparent 1.4px),
+        /* horizontal + vertical interconnect grid */
+        linear-gradient(rgba(0, 196, 255, .075) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 196, 255, .075) 1px, transparent 1px);
       background-size:
-        25px 25px,
-        31px 31px,
-        38px 38px;
+        48px 48px,
+        96px 96px,
+        96px 96px,
+        96px 96px;
       background-position:
-        0 3px,
-        13px 10px,
-        5px 18px;
+        0 0,
+        24px 24px,
+        0 0,
+        0 0;
+      -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,.92), rgba(0,0,0,.58));
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,.92), rgba(0,0,0,.58));
     }
 
+    /* Large spin-precession / orbital rings */
+    .home-hero::before {
+      content: "";
+      position: absolute;
+      width: 470px;
+      height: 470px;
+      left: -115px;
+      top: 92px;
+      border: 1px solid rgba(0, 203, 255, .28);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 52px rgba(0, 203, 255, .025),
+        0 0 0 105px rgba(0, 203, 255, .018);
+      transform: rotate(-18deg) scaleY(.42);
+      pointer-events: none;
+    }
+
+    /* Circuit traces + a second magenta spin/orbit motif */
     .home-hero::after {
       content: "";
       position: absolute;
       inset: 0;
       pointer-events: none;
-      opacity: .48;
+      opacity: .68;
       background:
-        linear-gradient(16deg, transparent 48%, rgba(0, 184, 255, .22) 48.15%, transparent 48.35%),
-        linear-gradient(-9deg, transparent 57%, rgba(255, 52, 112, .18) 57.15%, transparent 57.35%);
+        radial-gradient(ellipse 245px 82px at 86% 28%, transparent 48%, rgba(255, 48, 107, .28) 49%, rgba(255, 48, 107, .28) 50%, transparent 51%),
+        radial-gradient(circle 5px at 78% 28%, rgba(255, 48, 107, .9) 0 38%, transparent 42%),
+        radial-gradient(circle 5px at 93% 28%, rgba(0, 203, 255, .9) 0 38%, transparent 42%),
+        linear-gradient(0deg, transparent 73%, rgba(0, 203, 255, .20) 73.15%, rgba(0, 203, 255, .20) 73.35%, transparent 73.5%),
+        linear-gradient(90deg, transparent 82%, rgba(255, 48, 107, .17) 82.12%, rgba(255, 48, 107, .17) 82.32%, transparent 82.45%),
+        linear-gradient(24deg, transparent 47%, rgba(0, 184, 255, .20) 47.12%, transparent 47.32%),
+        linear-gradient(-13deg, transparent 60%, rgba(255, 52, 112, .16) 60.12%, transparent 60.32%);
     }
 
     .hero-content {
@@ -654,19 +699,196 @@
     .brand-logo img {
       display: block;
       width: auto;
-      height: 58px;
-      max-width: 300px;
+      height: 112px;
+      max-width: 445px;
       object-fit: contain;
     }
 
     @media (max-width: 700px) {
       .brand-logo img {
-        height: 48px;
-        max-width: 245px;
+        height: 82px;
+        max-width: 330px;
       }
     }
 
   </style>
+
+  <style>
+    /* Larger DS Han Lab. logo */
+    .site-header .nav,
+    .header-inner {
+      min-height: 126px !important;
+    }
+
+    .brand-logo {
+      display: inline-flex !important;
+      align-items: center !important;
+      flex-shrink: 0 !important;
+      padding: 5px 0 !important;
+      line-height: 0 !important;
+    }
+
+    .brand-logo img {
+      display: block !important;
+      width: auto !important;
+      height: 112px !important;
+      max-width: 445px !important;
+      object-fit: contain !important;
+    }
+
+    @media (max-width: 700px) {
+      .site-header .nav,
+      .header-inner {
+        min-height: 96px !important;
+      }
+
+      .brand-logo img {
+        height: 82px !important;
+        max-width: 330px !important;
+      }
+    }
+  </style>
+
+
+  <style>
+    /* Unified header with the other public pages */
+    .site-header {
+      background: rgba(6, 24, 46, .97) !important;
+      border-bottom: 1px solid rgba(255,255,255,.08) !important;
+    }
+    .site-header .nav {
+      min-height: 98px !important;
+    }
+    .brand-logo img {
+      height: 82px !important;
+      max-width: 390px !important;
+    }
+
+    /* Mobile/tablet navigation only; desktop menu remains unchanged */
+    .mobile-menu-toggle {
+      display: none;
+      appearance: none;
+      border: 0;
+      background: transparent;
+      color: #fff;
+      cursor: pointer;
+      padding: 8px;
+      margin-left: auto;
+      line-height: 1;
+    }
+    .mobile-menu-toggle .bar {
+      display: block;
+      width: 24px;
+      height: 2px;
+      margin: 5px 0;
+      background: currentColor;
+      border-radius: 2px;
+    }
+    @media (max-width: 900px) {
+      .site-header .nav {
+        min-height: 82px !important;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+      .brand-logo img {
+        height: 66px !important;
+        max-width: 315px !important;
+      }
+      .mobile-menu-toggle { display: block; }
+      .site-header .menu {
+        display: none !important;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 10px 0 14px;
+      }
+      .site-header .menu.is-open { display: flex !important; }
+      .site-header .menu a {
+        display: block;
+        width: 100%;
+        padding: 12px 4px;
+        border-bottom: 1px solid rgba(255,255,255,.08);
+      }
+    }
+  
+    /* =========================================================
+       v19 seamless Spin / MRAM hero background
+       ========================================================= */
+    .home-stage {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      background-color: #020b14;
+      background-image:
+        linear-gradient(90deg, rgba(2,11,20,.22), rgba(2,11,20,.54) 38%, rgba(2,11,20,.58) 62%, rgba(2,11,20,.20)),
+        linear-gradient(180deg, rgba(2,11,20,.04), rgba(2,11,20,.24)),
+        url('./Images/Home/aed-lab-spin-mram-bg.webp');
+      background-size: cover;
+      background-position: center top;
+      background-repeat: no-repeat;
+    }
+
+    .home-stage::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 18% 35%, rgba(0,203,255,.10), transparent 28%),
+        radial-gradient(circle at 84% 34%, rgba(255,48,107,.10), transparent 30%);
+    }
+
+    .home-hero {
+      min-height: 620px;
+      background: transparent !important;
+    }
+
+    .hero-particles,
+    .home-hero::before,
+    .home-hero::after,
+    .quick-links::before {
+      display: none !important;
+      content: none !important;
+    }
+
+    .quick-links {
+      position: relative;
+      overflow: visible;
+      padding: 18px 0 34px;
+      background: transparent !important;
+      border-top: 0 !important;
+      border-bottom: 1px solid rgba(255,255,255,.07);
+    }
+
+    .quick-links::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: -70px;
+      height: 120px;
+      pointer-events: none;
+      background: linear-gradient(to bottom, transparent, rgba(2,11,20,.20));
+    }
+
+    .quick-grid {
+      z-index: 2;
+    }
+
+    @media (max-width: 700px) {
+      .home-stage {
+        background-position: center top;
+        background-size: auto 760px;
+      }
+      .home-hero { min-height: 640px; }
+    }
+</style>
+
 </head>
 
 <body>
@@ -679,14 +901,20 @@
 
     <nav class="nav">
 
-      <a class="brand brand-logo" href="index.html" aria-label="DS Han Lab. Home">
+      <a class="brand brand-logo" href="./" aria-label="DS Han Lab. Home">
       <img
         src="./Images/Logo/ds-han-lab-logo.png"
         alt="DS Han Lab."
       >
     </a>
 
-      <div class="menu">
+      <button class="mobile-menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-main-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <div class="menu" id="mobile-main-menu">
 
         <a
           class="active"
@@ -704,7 +932,7 @@
         </a>
 
         <a href="publications.html">
-          PUBLICATIONS
+          RESEARCH OUTPUTS
         </a>
 
         <a href="news.html">
@@ -713,6 +941,10 @@
 
         <a href="mailto:dshan@kist.re.kr">
           CONTACT
+        </a>
+
+        <a href="#" data-private-route="/wiki">
+          WIKI
         </a>
 
       </div>
@@ -724,6 +956,8 @@
   <!-- =======================================================
        Hero
        ======================================================= -->
+
+  <div class="home-stage">
 
   <section class="home-hero">
 
@@ -856,7 +1090,7 @@
         <a
           class="quick-card publications reveal delay-3"
           href="publications.html"
-          aria-label="Publications"
+          aria-label="Research Outputs"
         >
           <svg
             class="quick-icon"
@@ -891,6 +1125,8 @@
     </div>
 
   </section>
+
+  </div><!-- /.home-stage -->
 
   <!-- =======================================================
        News
@@ -945,7 +1181,7 @@
     <div class="footer-inner">
 
       <div>
-        <strong>Emerging Nanoelectronics</strong><br>
+        <strong>Advanced Electronic Devices Lab.</strong><br>
         Center for Semiconductor Technology, KIST
       </div>
 
@@ -1097,6 +1333,44 @@
     }
 
     loadHomeNews();
+  </script>
+
+
+  <script>
+    (() => {
+      const PRIVATE_APP_BASE = "https://dshan-lab-private.benfoldsvi.workers.dev";
+      document.querySelectorAll("[data-private-route]").forEach((a) => {
+        const route = a.getAttribute("data-private-route") || "";
+        a.href = PRIVATE_APP_BASE + route;
+      });
+    })();
+  </script>
+
+
+  <script>
+    (() => {
+      const toggle = document.querySelector('.mobile-menu-toggle');
+      const menu = document.querySelector('.site-header .menu');
+      if (!toggle || !menu) return;
+      toggle.addEventListener('click', () => {
+        const open = menu.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      });
+      menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+        if (window.innerWidth <= 900) {
+          menu.classList.remove('is-open');
+          toggle.setAttribute('aria-expanded','false');
+          toggle.setAttribute('aria-label','Open menu');
+        }
+      }));
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 900) {
+          menu.classList.remove('is-open');
+          toggle.setAttribute('aria-expanded','false');
+        }
+      });
+    })();
   </script>
 
 </body>

@@ -9,100 +9,24 @@
 
   <link rel="stylesheet" href="./style.css">
 
-  <style>
-    .brand-logo {
-      display: inline-flex !important;
-      align-items: center !important;
-      flex-shrink: 0;
-      padding: 7px 0 !important;
-      line-height: 0 !important;
-    }
-    .member-photo-placeholder {
-      position: relative;
-    
-      width: 120px;
-      height: 120px;
-    
-      flex: 0 0 120px;
-    
-      border-radius: 50%;
-    
-      background: #253445;
-    
-      border: 1px solid rgba(255, 255, 255, 0.18);
-    
-      overflow: hidden;
-    }
-    
-    /* Head */
-    .member-photo-placeholder::before {
-      content: "";
-    
-      position: absolute;
-    
-      width: 34px;
-      height: 34px;
-    
-      left: 50%;
-      top: 24px;
-    
-      transform: translateX(-50%);
-    
-      border-radius: 50%;
-    
-      background: #9aa7b5;
-    }
-    
-    /* Body */
-    .member-photo-placeholder::after {
-      content: "";
-    
-      position: absolute;
-    
-      width: 64px;
-      height: 42px;
-    
-      left: 50%;
-      bottom: 18px;
-    
-      transform: translateX(-50%);
-    
-      border-radius: 34px 34px 18px 18px;
-    
-      background: #9aa7b5;
-    }
-    .brand-logo img {
-      display: block;
-      width: auto;
-      height: 58px;
-      max-width: 300px;
-      object-fit: contain;
-    }
+<style>
+.linkedin-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 3px;
+  background: #0A66C2;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: Arial, sans-serif;
+  line-height: 1;
+}
+</style>
 
-    @media (max-width: 700px) {
-      .brand-logo img {
-        height: 48px;
-        max-width: 245px;
-      }
-    }
-
-    .linkedin-dot {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 24px;
-      height: 24px;
-      border-radius: 4px;
-      background: #0a66c2;
-      color: #ffffff;
-      font-size: 14px;
-      font-weight: 800;
-      line-height: 1;
-      letter-spacing: -0.5px;
-    }
-
-  </style>
-
+  <link rel="stylesheet" href="header-brand.css">
 </head>
 
 <body>
@@ -120,10 +44,12 @@
       <a href="index.html">HOME</a>
       <a href="research.html">RESEARCH</a>
       <a href="people.html">PEOPLE</a>
-      <a href="publications.html">PUBLICATIONS</a>
+      <a href="publications.html">RESEARCH OUTPUTS</a>
       <a href="news.html">NEWS</a>
       <a href="mailto:dshan@kist.re.kr">CONTACT</a>
-    </div>
+    
+        <a href="#" data-private-route="/wiki">WIKI</a>
+      </div>
   </nav>
 </header>
 
@@ -174,27 +100,26 @@
         </p>
 
         <div class="profile-links">
-          <a
-            class="profile-link"
-            href="https://orcid.org/0000-0001-5530-8609"
-            target="_blank"
-            rel="noopener"
-          >
-            <span class="orcid-dot">iD</span>
-            ORCID 0000-0001-5530-8609
-          </a>
-
-          <a
-            class="profile-link"
-            href="https://www.linkedin.com/in/dong-soo-han-2aa0931b1"
-            target="_blank"
-            rel="noopener"
-            aria-label="Dong-Soo Han on LinkedIn"
-          >
-            <span class="linkedin-dot">in</span>
-            LinkedIn
-          </a>
-        </div>
+	  <a
+	    class="profile-link"
+	    href="https://orcid.org/0000-0001-5530-8609"
+	    target="_blank"
+	    rel="noopener"
+	  >
+	    <span class="orcid-dot">iD</span>
+	    ORCID 0000-0001-5530-8609
+	  </a>
+	
+	  <a
+	    class="profile-link"
+	    href="https://www.linkedin.com/in/dong-soo-han-2aa0931b1"
+	    target="_blank"
+	    rel="noopener"
+	  >
+            <span class="linkedin-icon">in</span>
+	    LinkedIn
+	  </a>
+	</div>
 
         <h3>Academic Experience</h3>
 
@@ -455,8 +380,8 @@
     </div>
 
     <div class="member-email">
-      <a href="mailto:093735@kist.re.kr">
-        093735@kist.re.kr
+      <a href="mailto:jbchoi@kist.re.kr">
+        jbchoi@kist.re.kr
       </a>
     </div>
 
@@ -520,62 +445,7 @@
     </div>
   </div>
 </article>
-    
-        <article class="member-row reveal">
-          <div>
-            <div
-              class="member-photo-placeholder"
-              role="img"
-              aria-label="Photo placeholder for Mr. Min-Jun Kim"
-            ></div>
-          </div>
-        
-          <div class="member-info">
-            <div class="member-badge">
-              INTERN
-            </div>
-        
-            <h3 class="member-name">
-              Mr. Min-Jun Kim
-            </h3>
-        
-            <div class="member-role">
-              Undergraduate Research Intern (Kyung Hee University)
-            </div>
-        
-            <div class="member-history">
-              <div>[2026.07 – Present; expected until 2026.08.31] Center for Semiconductor Technology, KIST</div>
-            </div>
-          </div>
-        </article>
-        
-        <article class="member-row reveal">
-          <div>
-            <div
-              class="member-photo-placeholder"
-              role="img"
-              aria-label="Photo placeholder for Mr. Sung-Jun Park"
-            ></div>
-          </div>
-        
-          <div class="member-info">
-            <div class="member-badge">
-              INTERN
-            </div>
-        
-            <h3 class="member-name">
-              Mr. Sung-Jun Park
-            </h3>
-        
-            <div class="member-role">
-              Undergraduate Research Intern (Kyung Hee University)
-            </div>
-        
-            <div class="member-history">
-              <div>[2026.06 – Present; expected until 2026.08.31] Center for Semiconductor Technology, KIST</div>
-            </div>
-          </div>
-        </article>
+      
       </div>
     </div>
   </section>
@@ -591,6 +461,16 @@
     </h2>
 
     <div class="alumni-grid">
+     <article class="alumni-card reveal">
+  <h3>Mr. Min-Jun Kim</h3>
+  <p>Former Undergraduate Research Intern · 2026.07 – 2026.08</p>
+  <p><strong>Currently @</strong> Kyoung Hee University · Bachelor Student</p>
+</article>
+     <article class="alumni-card reveal">
+  <h3>Mr. Sung-Jun Park</h3>
+  <p>Former Undergraduate Research Intern · 2026.07 – 2026.08</p>
+  <p><strong>Currently @</strong> Kyoung Hee University · Bachelor Student</p>
+</article>
       <article class="alumni-card reveal">
   <h3>Mr. Ki-Mun Seol</h3>
   <p>Former Undergraduate Research Intern · 2026.01 – 2026.06</p>
@@ -668,5 +548,6 @@
   });
 </script>
 
+  <script src="./private-app-config.js"></script>
 </body>
 </html>
