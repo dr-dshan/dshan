@@ -1,0 +1,1 @@
+Upload these files to the same paths in the dshanlab.org repository. publications.html keeps its filename/URL for backward compatibility, while the visible navigation/page title is changed to Research Outputs. Talks & Presentations is added as a fourth tab.

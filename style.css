@@ -597,6 +597,10 @@ h2 {
   border: 0;
 }
 
+.pub-frame-talks {
+  height: 1400px;
+}
+
 /* Footer */
 .footer {
   margin-top: 60px;
