@@ -9,107 +9,8 @@
 
   <link rel="stylesheet" href="./style.css">
 
-  <style>
-    .research-main {
-      background: #ffffff;
-    }
-
-    .research-intro {
-      max-width: 860px;
-      margin-bottom: 48px;
-    }
-
-    .research-topic {
-      display: grid;
-      grid-template-columns: minmax(0, 1.06fr) minmax(0, .94fr);
-      gap: 44px;
-      align-items: center;
-      padding: 46px 0;
-      border-top: 1px solid var(--line, #e3e9ef);
-    }
-
-    .research-topic:first-of-type {
-      border-top: 0;
-      padding-top: 12px;
-    }
-
-    .research-topic:nth-child(even) .research-topic-figure {
-      order: 2;
-    }
-
-    .research-topic-figure img {
-      display: block;
-      width: 100%;
-      border-radius: 12px;
-      background: #0d2946;
-      box-shadow: 0 12px 30px rgba(15, 23, 42, .08);
-    }
-
-    .topic-number {
-      margin-bottom: 10px;
-      color: var(--blue, #1267a8);
-      font-size: 11px;
-      font-weight: 900;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-    }
-
-    .research-topic-copy h2 {
-      margin: 0 0 14px;
-      font-size: 30px;
-      line-height: 1.22;
-    }
-
-    .research-topic-copy > p {
-      margin: 0;
-      color: var(--muted, #667085);
-      font-size: 15px;
-      line-height: 1.7;
-    }
-
-    .research-points {
-      margin: 20px 0 0;
-      padding-left: 19px;
-      color: #344054;
-      font-size: 14px;
-    }
-
-    .research-points li + li {
-      margin-top: 7px;
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(28px);
-      transition:
-        opacity .7s ease,
-        transform .7s ease;
-    }
-
-    .reveal.is-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @media (max-width: 850px) {
-      .research-topic {
-        grid-template-columns: 1fr;
-        gap: 26px;
-      }
-
-      .research-topic:nth-child(even) .research-topic-figure {
-        order: initial;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .reveal {
-        opacity: 1;
-        transform: none;
-        transition: none;
-      }
-    }
-  </style>
+  <meta name="description" content="Explore AED Lab research in spin and orbitronics, coupled dynamics, magnetic memory and emerging computing.">
+  <link rel="stylesheet" href="./research-aed.css">
 
   
 
@@ -143,12 +44,14 @@
     }
   </style>
 
+  <noscript><style>.site-header .menu#mobile-main-menu {display:flex !important}.site-header .mobile-menu-toggle {display:none}</style></noscript>
 </head>
 
 <body>
+  <a class="aed-skip" href="#research-main">Skip to research content</a>
 
   <header class="site-header">
-    <nav class="nav">
+    <nav class="nav" aria-label="Main navigation">
 
       <a class="brand brand-logo" href="./" aria-label="DS Han Lab. Home">
       <img
@@ -163,7 +66,7 @@
 
       <div class="menu" id="mobile-main-menu">
         <a href="./">HOME</a>
-        <a href="research.html">RESEARCH</a>
+        <a href="research.html" aria-current="page">RESEARCH</a>
         <a href="people.html">PEOPLE</a>
         <a href="publications.html">RESEARCH OUTPUTS</a>
         <a href="news.html">NEWS</a>
@@ -175,167 +78,86 @@
     </nav>
   </header>
 
-  <div class="page-head">
-    <div class="container">
-
-      <div class="breadcrumb">
-        Home / Research
+  <main class="research-main" id="research-main" tabindex="-1">
+    <section class="page-head aed-hero" aria-labelledby="vision">
+      <div class="container aed-hero-grid">
+        <div><div class="breadcrumb"><a href="./">Home</a> / Research</div>
+          <div class="kicker">Research Vision</div>
+          <h1 id="vision">Beyond charge, toward new ways to compute</h1>
+          <p class="lead">We study how spin, orbital motion and lattice vibrations carry and exchange angular momentum. We use that physics to design magnetic materials, memory devices and hardware for computing.</p>
+          <a class="aed-primary" href="#directions">Explore research directions</a></div>
+        <figure class="aed-hero-figure"><img src="./Images/Research/transport.png" width="1352" height="1035" fetchpriority="high" decoding="async" alt="Layered materials generating distinct spin, orbital and phonon transport channels"></figure>
       </div>
-
-      <h1>
-        Research
-      </h1>
-
+    </section>
+    <div class="container aed-body">
+      <section class="aed-section" aria-labelledby="roadmap">
+        <h2 id="roadmap">From Physics to Computing</h2>
+        <ol class="aed-roadmap"><li><h3>Fundamental Physics</h3><p>Identify mechanisms for angular-momentum generation, transfer and dissipation.</p></li><li><h3>Material Engineering</h3><p>Tune symmetry, interfaces and magnetic properties in thin films.</p></li><li><h3>Device Demonstration</h3><p>Measure switching, readout and variability in prototype devices.</p></li><li><h3>Integrated Computing</h3><p>Evaluate memory, sampling and inference at circuit and workload scale.</p></li></ol>
+        <div class="aed-feedback"><svg viewBox="0 0 480 26" preserveAspectRatio="none" aria-hidden="true"><path d="M478 2v14H3V2m-2 6 2-6 2 6" vector-effect="non-scaling-stroke"/></svg><p><strong>Feedback loop.</strong> Circuit requirements and device measurements feed back into materials design and fundamental questions about transport and switching.</p></div>
+      </section>
+      <section class="aed-section" aria-labelledby="directions">
+        <h2 id="directions">Research Directions</h2>
+        <div class="aed-tabs" aria-label="Research directions"><a id="tab-transport" href="#transport">Spin &amp; Orbitronics</a><a id="tab-dynamics" href="#dynamics">Coupled Spin–Lattice–Charge Dynamics</a><a id="tab-computing" href="#computing">MRAM &amp; In-Memory Computing</a><a id="tab-probabilistic" href="#probabilistic">Probabilistic &amp; AI Computing</a><a id="tab-materials" href="#materials">Emerging Magnetic Materials</a></div>
+        <section class="aed-panel" id="transport" aria-labelledby="title-transport">
+          <h3 id="title-transport">Spin &amp; Orbitronics</h3><p class="aed-panel-lead">How do charge currents generate and deliver angular momentum to a magnetic layer?</p>
+          <div class="aed-topic-grid"><div class="aed-subsections"><section><h4>Spin generation and torque</h4><p>A spin–orbit-coupled conductor can convert part of a longitudinal charge current into a transverse spin current. Angular momentum absorbed by an adjacent ferromagnet changes its magnetization and, with suitable symmetry breaking and pulse conditions, can reverse it. Comparing channel resistivity, torque efficiency and magnetic anisotropy connects transport to practical switching.</p><a href="https://doi.org/10.1109/TMAG.2025.3552339">Ta/Pt multilayer channels · IEEE Transactions on Magnetics (2025)</a></section><section><h4>Orbital transport and conversion</h4><p>An electric field can also generate a transverse flow of orbital angular momentum. Spin–orbit coupling can convert orbital into spin angular momentum in a multilayer. A research goal is to distinguish orbital contributions from spin Hall and interface effects using controlled material and thickness comparisons.</p><a href="https://doi.org/10.1103/PhysRevResearch.2.013177">Orbital torque theory · Physical Review Research (2020)</a></section></div>
+          <div><figure class="aed-demo" data-demo="0">
+  <svg viewBox="0 0 480 220" width="480" height="220" aria-hidden="true" focusable="false"><rect x="50" y="120" width="380" height="44" rx="8" fill="#173a61"/><rect x="144" y="50" width="192" height="56" rx="8" fill="#553574"/><text x="240" y="30">Ferromagnetic free layer</text><text x="240" y="194">Charge current in spin–orbit channel</text><path d="M88 143H392m-10-7 10 7-10 7" class="rail"/><g transform="translate(240 78)"><g class="sot spin"><path d="M0 14V-21m-6 7 6-7 6 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g></g><g class="pulse"><path d="M185 120V96m-5 5 5-5 5 5m100 19V96m-5 5 5-5 5 5" class="rail"/></g></svg>
+  <figcaption><h4>SOT switching</h4><p>A current pulse transfers spin angular momentum into the free layer. The arrow shows an illustrative reversal under suitable switching conditions.</p>
+  <div class="aed-controls" hidden><button type="button" class="aed-play">Apply pulse</button></div>
+  <p class="aed-status" role="status"></p></figcaption>
+</figure></div></div>
+        </section>
+        <section class="aed-panel" id="dynamics" aria-labelledby="title-dynamics">
+          <h3 id="title-dynamics">Coupled Spin–Lattice–Charge Dynamics</h3><p class="aed-panel-lead">Magnon–Phonon–Electron Interconversion</p>
+          <div class="aed-topic-grid"><div class="aed-subsections"><section><h4>Moving carriers and collective modes</h4><p>Electrons carry charge and can transfer spin angular momentum. Magnons are quanta of collective spin waves, in which neighboring local moments precess with a phase difference. Phonons are quanta of lattice vibrations, in which atoms oscillate about their equilibrium positions. These modes can exchange energy and, where symmetry permits, angular momentum.</p><a href="https://doi.org/10.1038/s44306-024-00040-5">Coherent spin-wave handedness · npj Spintronics (2024)</a></section><section><h4>Electron–magnon transfer and spin dissipation</h4><p>Exchange interactions allow spin transfer between itinerant electrons and magnetic excitations. Choi and colleagues reported magnetization switching driven by magnonic spin dissipation. A next question is how interfaces and the available magnetic modes set the balance between electronic and magnonic transfer.</p><a href="https://doi.org/10.1038/s41467-025-61073-w">Magnonic spin dissipation · Nature Communications (2025)</a></section><section><h4>Magnetoelastic coupling and phonon scattering</h4><p>Strain can modulate magnetic anisotropy, while magnetic dynamics can drive lattice motion through magnetostriction. Modes can hybridize when their frequencies, wave vectors and symmetries allow coupling. Electron–phonon scattering can also influence spin transport, as reported for the spin Hall effect in platinum.</p><a href="https://doi.org/10.1103/PhysRevB.97.100405">Phonon skew scattering in Pt · Physical Review B (2018)</a></section></div>
+          <div><figure class="aed-demo" data-demo="1">
+  <svg viewBox="0 0 480 220" width="480" height="220" aria-hidden="true" focusable="false"><text x="78" y="46">Electron</text><text x="75" y="108">Magnon</text><text x="75" y="180">Phonon</text><path d="M145 41H435 M145 104H435 M145 173H435" class="rail"/><path d="M426 52V155m-5-97 5-6 5 6m-10 91 5 6 5-6" class="coupling"/><circle cx="150" cy="41" r="9" class="electron"/><circle cx="225" cy="41" r="6" class="electron second"/><g transform="translate(155 104)"><ellipse cy="-20" rx="11" ry="4" class="rail"/><g class="precess spin" style="--phase:-0s"><path d="M0 14V-21m-6 7 6-7 6 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g></g><circle cx="155" cy="173" r="8" class="atom" style="--phase:-0s"/><g transform="translate(201 104)"><ellipse cy="-20" rx="11" ry="4" class="rail"/><g class="precess spin" style="--phase:-0.19s"><path d="M0 14V-21m-6 7 6-7 6 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g></g><circle cx="201" cy="173" r="8" class="atom" style="--phase:-0.19s"/><g transform="translate(247 104)"><ellipse cy="-20" rx="11" ry="4" class="rail"/><g class="precess spin" style="--phase:-0.38s"><path d="M0 14V-21m-6 7 6-7 6 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g></g><circle cx="247" cy="173" r="8" class="atom" style="--phase:-0.38s"/><g transform="translate(293 104)"><ellipse cy="-20" rx="11" ry="4" class="rail"/><g class="precess spin" style="--phase:-0.5700000000000001s"><path d="M0 14V-21m-6 7 6-7 6 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g></g><circle cx="293" cy="173" r="8" class="atom" style="--phase:-0.5700000000000001s"/><g transform="translate(339 104)"><ellipse cy="-20" rx="11" ry="4" class="rail"/><g class="precess spin" style="--phase:-0.76s"><path d="M0 14V-21m-6 7 6-7 6 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g></g><circle cx="339" cy="173" r="8" class="atom" style="--phase:-0.76s"/><g transform="translate(385 104)"><ellipse cy="-20" rx="11" ry="4" class="rail"/><g class="precess spin" style="--phase:-0.95s"><path d="M0 14V-21m-6 7 6-7 6 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g></g><circle cx="385" cy="173" r="8" class="atom" style="--phase:-0.95s"/></svg>
+  <figcaption><h4>Electron, magnon and phonon motion</h4><p>Electrons drift along the channel. Local moments precess with a phase offset, while atoms vibrate about fixed sites. The dashed connector marks possible coupling between channels.</p>
+  <div class="aed-controls" hidden><button type="button" class="aed-play">Play motion</button></div>
+  <p class="aed-status" role="status"></p></figcaption>
+</figure></div></div>
+        </section>
+        <section class="aed-panel" id="computing" aria-labelledby="title-computing">
+          <h3 id="title-computing">MRAM &amp; In-Memory Computing</h3><p class="aed-panel-lead">From magnetic tunnel junctions to memory arrays that participate in computation.</p>
+          <div class="aed-topic-grid"><div class="aed-subsections"><section><h4>Write, store and read</h4><p>A magnetic tunnel junction (MTJ) encodes a bit in the relative orientation of its free and reference layers. Parallel and antiparallel configurations typically give lower and higher resistance, respectively. A three-terminal SOT design separates the write channel from the tunnel read path. Published Ta/Pt channel engineering provides a starting point for studying write current alongside retention, variability and read margin.</p><a href="https://doi.org/10.1109/TMAG.2025.3552339">SOT-MRAM write-channel engineering (2025)</a></section><section><h4>Array and circuit co-design</h4><p>In-memory computing uses stored states during computation to reduce data movement. Candidate operations include bitwise logic and accumulation. Practical comparisons should include sensing, peripheral circuits, conversion overhead and device variation at matched task accuracy.</p><a href="https://doi.org/10.1038/s41586-021-04196-6">External context · MRAM crossbar array (2022)</a></section></div>
+          <div><figure class="aed-demo" data-demo="2">
+  <svg viewBox="0 0 480 220" width="480" height="220" aria-hidden="true" focusable="false"><rect x="130" y="28" width="220" height="48" rx="7" fill="#553574"/><rect x="130" y="91" width="220" height="10" rx="3" fill="#edac50"/><rect x="130" y="116" width="220" height="48" rx="7" fill="#173a61"/><g transform="translate(240 53)"><g class="mtj-free spin"><path d="M0 14V-21m-6 7 6-7 6 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g></g><g transform="translate(240 141)" class="spin"><path d="M0 14V-21m-6 7 6-7 6 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g><text x="240" y="194">Magnetic tunnel junction</text></svg>
+  <figcaption><h4>MTJ resistance states</h4><p>The gold barrier separates the free and reference layers. Compare parallel alignment (typically lower resistance) with antiparallel alignment (typically higher resistance).</p>
+  <div class="aed-controls" hidden><button type="button" class="aed-play">Toggle free layer</button></div>
+  <p class="aed-status" role="status">Parallel · lower resistance.</p></figcaption>
+</figure></div></div>
+        </section>
+        <section class="aed-panel" id="probabilistic" aria-labelledby="title-probabilistic">
+          <h3 id="title-probabilistic">Probabilistic &amp; AI Computing</h3><p class="aed-panel-lead">Use controllable fluctuations for sampling, inference and optimization.</p>
+          <div class="aed-topic-grid"><div class="aed-subsections"><section><h4>Stochastic MTJs and p-bits</h4><p>Thermally activated switching in a low-barrier junction produces random telegraph resistance. A readout circuit can map these fluctuations to a binary output, and a control input can bias the fraction of time spent in each state. Dwell-time statistics and autocorrelation matter when deciding how quickly to sample the device.</p><a href="https://doi.org/10.1038/s41928-025-01439-6">External context · Integrated probabilistic computing (2025)</a></section><section><h4>From p-bits to workloads</h4><p>Coupled p-bits use weighted interactions to sample candidate configurations. Optimization and probabilistic inference are candidate workloads. Benchmarking should account for sample correlations, circuit overhead and solution quality at a given time or energy budget.</p></section></div>
+          <div><figure class="aed-demo" data-demo="3">
+  <svg viewBox="0 0 480 220" width="480" height="220" aria-hidden="true" focusable="false"><path d="M43 58H444M43 134H444" class="rail"/><text x="24" y="64">1</text><text x="24" y="140">0</text><path class="trace" d="M48 134H115V58H165V134H233V58H330V134H440"/><text x="240" y="192">Sample sequence</text></svg>
+  <figcaption><h4>Stochastic p-bit</h4><p>A toy binary sampler illustrates how input bias changes the likelihood of a 1. The trace is generated in your browser.</p>
+  <div class="aed-controls" hidden><button type="button" class="aed-play">Play samples</button><label>Input bias <select class="aed-bias"><option value=".2">Toward 0</option><option value=".5" selected>Balanced</option><option value=".8">Toward 1</option></select></label><button type="button" class="aed-sample">Sample once</button></div>
+  <p class="aed-status" role="status"></p></figcaption>
+</figure><details class="aed-original"><summary>View lab overview illustration</summary><img src="./Images/Research/mram_computing.png" width="1674" height="1117" alt="Conceptual schematic of stochastic MTJs, binary traces and a p-bit network" loading="lazy" decoding="async"><p>Conceptual overview. For quantitative results, consult the linked papers.</p></details></div></div>
+        </section>
+        <section class="aed-panel" id="materials" aria-labelledby="title-materials">
+          <h3 id="title-materials">Emerging Magnetic Materials</h3><p class="aed-panel-lead">Use symmetry and interfaces to design electrical control and readout.</p>
+          <div class="aed-topic-grid"><div class="aed-subsections"><section><h4>Compensated magnets and spin splitting</h4><p>Antiferromagnets can have ordered moments with little net magnetization. In altermagnets, crystal symmetry can permit momentum-dependent spin splitting despite magnetic compensation. Published RuO₂ thin-film studies offer distinct probes of spin splitting and depth-dependent magnetism. Growth conditions, strain and alternative signal origins remain important to check.</p><a href="https://doi.org/10.1063/5.0306418">Depth-resolved RuO₂ magnetic order · Applied Physics Letters (2026)</a></section><section><h4>Chiral exchange and symmetry</h4><p>In structures with suitable broken inversion symmetry, Dzyaloshinskii–Moriya exchange can favor a specific handedness of neighboring moments. Chiral interlayer exchange has been reported in synthetic antiferromagnets. Changing layer sequences or comparing opposite handedness can help isolate the symmetry of the underlying interaction.</p><a href="https://doi.org/10.1038/s41563-019-0370-z">Chiral interlayer exchange · Nature Materials (2019)</a></section></div>
+          <div><figure class="aed-demo" data-demo="4">
+  <svg viewBox="0 0 480 220" width="480" height="220" aria-hidden="true" focusable="false"><path d="M240 28V161" class="rail mirror"/><g transform="translate(135 108)"><g transform="translate(-72 0) rotate(-60)"><g class="chiral spin"><path d="M0 14V-21m-6 7 6-7 6 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g></g><g transform="translate(-24 0) rotate(-20)"><g class="chiral spin"><path d="M0 14V-21m-6 7 6-7 6 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g></g><g transform="translate(24 0) rotate(20)"><g class="chiral spin"><path d="M0 14V-21m-6 7 6-7 6 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g></g><g transform="translate(72 0) rotate(60)"><g class="chiral spin"><path d="M0 14V-21m-6 7 6-7 6 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g></g></g><g transform="translate(345 108)"><g transform="translate(-72 0) rotate(60)"><g class="chiral spin"><path d="M0 14V-21m-6 7 6-7 6 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g></g><g transform="translate(-24 0) rotate(20)"><g class="chiral spin"><path d="M0 14V-21m-6 7 6-7 6 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g></g><g transform="translate(24 0) rotate(-20)"><g class="chiral spin"><path d="M0 14V-21m-6 7 6-7 6 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g></g><g transform="translate(72 0) rotate(-60)"><g class="chiral spin"><path d="M0 14V-21m-6 7 6-7 6 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g></g></g><text x="135" y="192">One handedness</text><text x="345" y="192">Mirror handedness</text></svg>
+  <figcaption><h4>Chiral symmetry</h4><p>A mirror reflection reverses the handedness of a spin texture. Compare the two sequences across the dashed line.</p>
+  <div class="aed-controls" hidden><button type="button" class="aed-play">Compare handedness</button></div>
+  <p class="aed-status" role="status"></p></figcaption>
+</figure><details class="aed-original"><summary>View lab overview illustration</summary><img src="./Images/Research/emerging_materials.png" width="1540" height="1114" alt="Illustrative comparison of compensated magnetic orders and candidate materials" loading="lazy" decoding="async"><p>Conceptual overview. For quantitative results, consult the linked papers.</p></details></div></div>
+        </section>
+      </section>
+      <section class="aed-section" aria-labelledby="highlights">
+        <h2 id="highlights">Selected Research Highlights</h2>
+        <div class="aed-highlights"><article><p class="aed-meta">2026 · Applied Physics Letters</p><h3><a href="https://doi.org/10.1063/5.0306418">Depth-resolved magnetism in RuO₂</a></h3><p>Low-energy muons probed the depth profile of magnetic order in thin films.</p></article><article><p class="aed-meta">2025 · Nature Communications</p><h3><a href="https://doi.org/10.1038/s41467-025-61073-w">Switching through magnonic spin dissipation</a></h3><p>The study demonstrated a magnetization-switching mechanism driven by magnonic spin dissipation.</p></article><article><p class="aed-meta">2025 · IEEE Transactions on Magnetics</p><h3><a href="https://doi.org/10.1109/TMAG.2025.3552339">Ta/Pt write channels for SOT-MRAM</a></h3><p>The multilayer channel design addressed resistivity and spin Hall conversion together.</p></article><article><p class="aed-meta">2024 · npj Spintronics</p><h3><a href="https://doi.org/10.1038/s44306-024-00040-5">Real-time spin-wave handedness</a></h3><p>Time-resolved measurements distinguished the handedness of coherent spin waves.</p></article></div>
+        <a href="./publications.html">Browse research outputs</a>
+      </section>
+      <section class="aed-section" aria-labelledby="opportunities">
+        <div class="aed-opportunities"><h2 id="opportunities">Research Opportunities</h2><p>We welcome inquiries from students, researchers and collaborators interested in thin-film growth, magnetism and transport measurements, magnetic devices or hardware–algorithm co-design.</p><p>Tell us which research direction interests you and include a short summary of your background or proposed collaboration.</p><a class="aed-primary" href="mailto:dshan@kist.re.kr?subject=AED%20Lab%20research%20inquiry">Contact AED Lab</a></div>
+      </section>
     </div>
-  </div>
-
-  <main class="research-main">
-
-    <div class="container section">
-
-      <div class="research-intro reveal">
-
-        <div class="kicker">
-          Research Directions
-        </div>
-
-        <h2>
-          From Fundamentals to Emerging Electronic Systems
-        </h2>
-
-        <p class="lead">
-          We combine nanoscale transport, emerging magnetic materials,
-          and magnetic-device engineering to develop new concepts
-          for future electronics and computing.
-        </p>
-
-      </div>
-
-      <!-- 01 -->
-      <section
-        id="transport"
-        class="research-topic reveal"
-      >
-
-        <div class="research-topic-figure">
-          <img
-            src="./Images/Research/transport.png"
-            alt="Spin, orbital and phonon transport for nanoelectronics"
-          >
-        </div>
-
-        <div class="research-topic-copy">
-
-          <div class="topic-number">
-            Research 01
-          </div>
-
-          <h2>
-            Spin, Orbital & Phonon Transport for Nanoelectronics
-          </h2>
-
-          <p>
-            We investigate the generation, transport and interconversion
-            of spin, orbital and phonon angular momentum in nanoscale
-            materials and heterostructures, and exploit these channels
-            to realize efficient electronic functionalities.
-          </p>
-
-          <ul class="research-points">
-            <li>Spin transport and spin-orbit torque</li>
-            <li>Orbital transport and orbitronics</li>
-            <li>Phonon-mediated angular-momentum transport</li>
-            <li>Spin–orbital–phonon interconversion for nanoelectronics</li>
-          </ul>
-
-        </div>
-
-      </section>
-
-      <!-- 02 -->
-      <section
-        id="materials"
-        class="research-topic reveal"
-      >
-
-        <div class="research-topic-figure">
-          <img
-            src="./Images/Research/emerging_materials.png"
-            alt="Antiferromagnets, altermagnets and emerging materials"
-          >
-        </div>
-
-        <div class="research-topic-copy">
-
-          <div class="topic-number">
-            Research 02
-          </div>
-
-          <h2>
-            Antiferromagnets, Altermagnets & Emerging Materials for Spintronics
-          </h2>
-
-          <p>
-            We explore antiferromagnets, altermagnets and other emerging
-            magnetic materials as platforms for new spintronic devices,
-            with emphasis on material properties and transport responses
-            that can be translated into practical device operation.
-          </p>
-
-          <ul class="research-points">
-            <li>Antiferromagnetic and altermagnetic spintronics</li>
-            <li>Emerging magnetic materials and heterostructures</li>
-            <li>Epitaxial thin-film growth and interface engineering</li>
-            <li>Electrical manipulation and detection of magnetic order</li>
-          </ul>
-
-        </div>
-
-      </section>
-
-      <!-- 03 -->
-      <section
-        id="computing"
-        class="research-topic reveal"
-      >
-
-        <div class="research-topic-figure">
-          <img
-            src="./Images/Research/mram_computing.png"
-            alt="MRAM, random telegraph noise and probabilistic computing"
-          >
-        </div>
-
-        <div class="research-topic-copy">
-
-          <div class="topic-number">
-            Research 03
-          </div>
-
-          <h2>
-            MRAM, Probabilistic Computing & Process-in-Memory
-          </h2>
-
-          <p>
-            We develop magnetic tunnel-junction devices and MRAM-based
-            computing concepts that exploit nonvolatility, stochastic
-            switching and in-memory operation for next-generation
-            information-processing architectures.
-          </p>
-
-          <ul class="research-points">
-            <li>Spin-orbit-torque and advanced MRAM</li>
-            <li>Stochastic MTJs and random-telegraph-noise devices</li>
-            <li>Probabilistic computing and p-bits</li>
-            <li>Process-in-memory and neuromorphic computing</li>
-          </ul>
-
-        </div>
-
-      </section>
-
-    </div>
-
   </main>
 
   <footer class="footer">
@@ -358,34 +180,7 @@
     </div>
   </footer>
 
-  <script>
-    const revealElements =
-      document.querySelectorAll(".reveal");
-
-    const revealObserver =
-      new IntersectionObserver(
-        function(entries, observer) {
-
-          entries.forEach(function(entry) {
-
-            if (entry.isIntersecting) {
-              entry.target.classList.add("is-visible");
-              observer.unobserve(entry.target);
-            }
-
-          });
-
-        },
-        {
-          threshold: 0.12,
-          rootMargin: "0px 0px -45px 0px"
-        }
-      );
-
-    revealElements.forEach(function(element) {
-      revealObserver.observe(element);
-    });
-  </script>
+  <script src="./research-aed.js" defer></script>
 
   
 <script id="unified-mobile-nav-script">
@@ -397,6 +192,12 @@
     const open=menu.classList.toggle('is-open');
     toggle.setAttribute('aria-expanded',open?'true':'false');
     toggle.setAttribute('aria-label',open?'Close menu':'Open menu');
+  });
+  menu.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape' && menu.classList.contains('is-open')) {
+      toggle.click();
+      toggle.focus();
+    }
   });
   menu.querySelectorAll('a').forEach(function(link){
     link.addEventListener('click',function(){
