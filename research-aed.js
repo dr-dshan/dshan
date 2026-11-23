@@ -61,6 +61,14 @@
     const defaultLabel = play.textContent;
     const samples = [];
     let timer;
+    let frame;
+    let started;
+    let elapsed = 0;
+    const spinVectors = Array.from(figure.querySelectorAll('.viz-spin-vector'));
+    const atoms = Array.from(figure.querySelectorAll('.viz-atom'));
+    const lattice = figure.querySelector('.viz-lattice-wave');
+    const chiralSpins = Array.from(figure.querySelectorAll('.viz-chiral-spin'));
+    const continuous = demo === 1 || demo === 3 || demo === 4;
     let active = false;
 
     function sample(announce = false) {
@@ -70,7 +78,55 @@
       const height = bit => bit ? 58 : 134;
       const points = samples.map((bit, index) => 'H' + (48 + index * 15) + 'V' + height(bit));
       trace.setAttribute('d', 'M48 ' + height(samples[0]) + points.join('') + 'h15');
+      const point = figure.querySelector('.viz-sample-point');
+      point.setAttribute('cx', 48 + samples.length * 15);
+      point.setAttribute('cy', height(value));
+      const share = samples.reduce((sum, bit) => sum + bit, 0) / samples.length;
+      figure.querySelector('.viz-sample-share').setAttribute('width', 238 * share);
+      figure.querySelector('.viz-share-label').textContent = Math.round(100 * share) + '%';
       if (announce) status.textContent = 'Sampled ' + value + '.';
+    }
+
+    function draw(phase) {
+      if (demo === 1) {
+        spinVectors.forEach((vector, index) => {
+          const angle = phase - index * .86;
+          const x = 12 * Math.cos(angle);
+          const y = -20 + 5 * Math.sin(angle);
+          // Project the precession cone into the plane of the figure.
+          const length = Math.hypot(x, y);
+          const tipX = x - 5 * x / length;
+          const tipY = y - 5 * y / length;
+          const sideX = 3 * y / length;
+          const sideY = -3 * x / length;
+          vector.setAttribute('d', `M0 0L${x} ${y}M${tipX + sideX} ${tipY + sideY}L${x} ${y}L${tipX - sideX} ${tipY - sideY}`);
+        });
+        const wave = atoms.map((atom, index) => {
+          const y = 189 + 10 * Math.sin(phase - index * .86);
+          atom.setAttribute('cy', y);
+          return atom.getAttribute('cx') + ' ' + y;
+        });
+        lattice.setAttribute('d', 'M' + wave.join('L'));
+      }
+      if (demo === 4) {
+        chiralSpins.forEach(spin => {
+          const handedness = Number(spin.dataset.side) ? -1 : 1;
+          const angle = handedness * (-80 + Number(spin.dataset.site) * 50 + phase * 180 / Math.PI);
+          spin.setAttribute('transform', 'rotate(' + angle + ')');
+        });
+      }
+    }
+
+    function animate(time) {
+      started ??= time;
+      draw((elapsed + time - started) / (demo === 1 ? 320 : 750));
+      frame = requestAnimationFrame(animate);
+    }
+
+    function pauseMotion() {
+      cancelAnimationFrame(frame);
+      if (started !== undefined) elapsed += performance.now() - started;
+      started = undefined;
     }
 
     function render() {
@@ -78,6 +134,10 @@
       if (demo === 1) {
         play.textContent = active ? (reduced.matches ? 'Reset diagram' : 'Pause motion') : (reduced.matches ? 'Show alternate state' : defaultLabel);
         status.textContent = active ? (reduced.matches ? 'Alternate positions shown without motion.' : 'Motion running.') : '';
+      }
+      if (demo === 4) {
+        play.textContent = active ? (reduced.matches ? 'Reset diagram' : 'Pause textures') : (reduced.matches ? 'Show alternate orientation' : defaultLabel);
+        status.textContent = active ? 'The two textures have opposite winding.' : '';
       }
       if (demo === 3) {
         play.hidden = reduced.matches;
@@ -87,7 +147,8 @@
     }
 
     function stop() {
-      if (demo !== 1 && demo !== 3) return;
+      if (!continuous) return;
+      if (demo !== 3) pauseMotion();
       active = false;
       clearInterval(timer);
       render();
@@ -109,23 +170,25 @@
         clearInterval(timer);
         if (active) timer = setInterval(sample, 150);
       }
+      if (demo === 1 || demo === 4) {
+        if (reduced.matches) draw(active ? Math.PI / 2 : 0);
+        else if (active) frame = requestAnimationFrame(animate);
+        else pauseMotion();
+      }
       render();
       if (demo === 0) {
         play.textContent = active ? 'Reset magnetization' : defaultLabel;
         status.textContent = active ? 'Magnetization reversed.' : 'Initial magnetization restored.';
       } else if (demo === 2) {
         status.textContent = active ? 'Antiparallel · higher resistance.' : 'Parallel · lower resistance.';
-      } else if (demo === 4) {
-        play.setAttribute('aria-pressed', String(active));
-        status.textContent = active ? 'Mirror-related textures have opposite handedness.' : '';
       }
     });
 
-    if (demo === 4) play.setAttribute('aria-pressed', 'false');
+    draw(0);
     figure.querySelector('.aed-controls').hidden = false;
     render();
     reduced.addEventListener('change', stop);
-    if ('IntersectionObserver' in window && (demo === 1 || demo === 3)) {
+    if ('IntersectionObserver' in window && continuous) {
       const observer = new IntersectionObserver(entries => {
         if (!entries[0].isIntersecting && active) stop();
       });

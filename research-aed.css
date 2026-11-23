@@ -62,29 +62,56 @@
 .aed-highlights .aed-meta {font-size:.88rem; color:#285579; margin:0 0 .55rem;}
 .aed-opportunities {padding:clamp(1.15rem,4vw,2.7rem); border-radius:14px; background:#eaf3fb;}
 .aed-opportunities p {max-width:70ch;}
-.aed-demo .rail {stroke:#6e9ec5; stroke-width:2; fill:none;}
-.aed-demo .spin,.aed-demo .trace {color:#77d8ff;}
-.aed-demo .atom {fill:#abd979;}
-.aed-demo .electron {fill:#ffbc6a;}
-.aed-demo .coupling {stroke:#dba3ff; fill:none; stroke-width:2; stroke-dasharray:5 5;}
-.aed-demo .pulse {opacity:.28;}
-.aed-demo .trace {stroke:currentColor; stroke-width:3; stroke-linejoin:round; fill:none;}
-.aed-demo .mirror {stroke-dasharray:5 5;}
-.aed-demo .sot,.aed-demo .mtj-free {transition:transform .65s ease;}
-.aed-demo .chiral {transition:color .45s ease;}
-.aed-demo.is-active :is(.sot,.mtj-free) {transform:rotate(180deg);}
-.aed-demo.is-active .pulse {animation:aed-pulse .75s ease;}
-.aed-demo.is-active .electron {animation:aed-drift 2.2s linear infinite;}
-.aed-demo.is-active .second {animation-delay:-.6s;}
-.aed-demo.is-active .precess {animation:aed-precess 1.35s var(--phase) linear infinite;}
-.aed-demo.is-active .atom {animation:aed-vibrate 1.35s var(--phase) ease-in-out infinite;}
-.aed-demo.is-active .coupling {animation:aed-coupling 1.35s ease-in-out infinite;}
-.aed-demo.is-active .chiral {color:#ffd08c;}
-@keyframes aed-pulse {45% {opacity:1;}}
-@keyframes aed-drift {to {transform:translateX(185px);}}
-@keyframes aed-precess {0%,100% {transform:skewX(-22deg) scaleY(.87);} 50% {transform:skewX(22deg);}}
-@keyframes aed-vibrate {25% {transform:translateX(-8px);} 75% {transform:translateX(8px);}}
-@keyframes aed-coupling {50% {opacity:.35;}}
+
+/* Shared visual language for the interactive research figures. */
+.aed-demo svg {background:radial-gradient(ellipse at 52% 44%,#172f51,#071326 87%);}
+.aed-demo svg .viz-title,.aed-demo svg .viz-context {font-weight:750; font-size:11px; letter-spacing:.11em;}
+.aed-demo svg .viz-title {text-anchor:start; fill:#86e5ff;}
+.aed-demo svg .viz-context {text-anchor:end; fill:#b7cbe3;}
+.aed-demo svg .viz-label {font-size:13px; font-weight:600;}
+.aed-demo .viz-card {fill:#122743; fill-opacity:.8; stroke:#345473;}
+.aed-demo .viz-badge {fill:#182f4e; stroke:#547697;}
+.aed-demo .rail {stroke:#527397; stroke-width:1.4; fill:none;}
+.aed-demo .mirror {stroke-dasharray:4 6;}
+.aed-demo .spin,.aed-demo .trace {color:#78e4ff;}
+.aed-demo .sot {transition:transform .35s ease, color .35s ease;}
+.aed-demo.is-active .sot {transform:rotate(180deg); color:#ffaed2; transition-delay:.38s;}
+.aed-demo .viz-current,.aed-demo .viz-torque,.aed-demo .viz-read-flow {stroke-linecap:round; stroke-width:2.7; fill:none;}
+.aed-demo .viz-current {stroke:#ffb978; stroke-dasharray:12 24; opacity:0;}
+.aed-demo .viz-torque {stroke:#7ee7ff; opacity:.22;}
+.aed-demo.is-active .viz-current {animation:aed-current .78s ease both;}
+.aed-demo.is-active .viz-torque {animation:aed-torque .68s .12s ease both;}
+.aed-demo .viz-tail {stroke:#fa9760; stroke-width:3; stroke-linecap:round; opacity:.55;}
+.aed-demo.is-active .viz-carrier {animation:aed-carriers 1.7s var(--delay) linear infinite;}
+.aed-demo .viz-orbit {stroke:#6da3d4; stroke-opacity:.6; stroke-dasharray:2 3; fill:none;}
+.aed-demo .viz-pivot {fill:#bddaf6;}
+.aed-demo .viz-spin-vector {stroke:#7ce6ff; stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round; fill:none;}
+.aed-demo .viz-atom {fill:#bbec97; stroke:#507e4f; stroke-width:1.5;}
+.aed-demo .viz-lattice-wave {fill:none; stroke:#7db865; stroke-width:1.8;}
+.aed-demo .coupling {stroke:#dcaaff; fill:none; stroke-width:1.7; stroke-dasharray:4 4;}
+.aed-demo.is-active .coupling {animation:aed-coupling 1.25s linear infinite;}
+.aed-demo .viz-barrier {stroke:#ffcb7f; stroke-width:5; stroke-linecap:round;}
+.aed-demo .viz-read-flow {stroke:#8ae5ff; stroke-dasharray:3 7; opacity:.7; transition:opacity .3s;}
+.aed-demo .mtj-free {transition:transform .45s ease, color .45s ease;}
+.aed-demo.is-active .mtj-free {transform:rotate(180deg); color:#ffaed2;}
+.aed-demo.is-active .viz-read-flow {opacity:.2;}
+.aed-demo .viz-antiparallel,.aed-demo.is-active .viz-parallel {display:none;}
+.aed-demo.is-active .viz-antiparallel {display:inline;}
+.aed-demo .trace {stroke:currentColor; stroke-width:2.7; stroke-linejoin:round; fill:none;}
+.aed-demo .viz-sample-share,.aed-demo .viz-sample-point {fill:#78e4ff;}
+.aed-demo .viz-sample-share {transition:width .14s linear;}
+@keyframes aed-current {
+  0% {opacity:0; stroke-dashoffset:70;}
+  25%,65% {opacity:1;}
+  100% {opacity:0; stroke-dashoffset:0;}
+}
+@keyframes aed-torque {40% {opacity:1; stroke-width:3.8;}}
+@keyframes aed-carriers {
+  from {transform:translateX(0); opacity:0;}
+  15%,84% {opacity:1;}
+  to {transform:translateX(125px); opacity:0;}
+}
+@keyframes aed-coupling {to {stroke-dashoffset:-16;}}
 @media(max-width:880px) {
   .aed-hero-grid,.aed-topic-grid {grid-template-columns:1fr;}
   .aed-hero-figure {max-width:38rem;}
@@ -99,8 +126,6 @@
 @media(max-width:450px) {.aed-highlights {grid-template-columns:1fr;}}
 @media(prefers-reduced-motion:reduce) {
   .research-main *, .research-main *::before, .research-main *::after {animation:none !important; transition:none !important; scroll-behavior:auto !important;}
-  .aed-demo.is-active .precess {transform:skewX(20deg);}
-  .aed-demo.is-active .atom {transform:translateX(6px);}
-  .aed-demo.is-active .electron {transform:translateX(55px);}
+  .aed-demo.is-active .viz-torque {opacity:1;}
   .aed-demo.is-active .coupling {stroke-dasharray:none;}
 }
