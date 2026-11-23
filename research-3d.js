@@ -126,6 +126,34 @@ function createResearchScene(canvas, scene, onStep = () => {}) {
     }});
   }
 
+  function drawPOrbital(point,sign,color) {
+    const center=project(point);
+    const tip=project([point[0]+.17,point[1]+.06*sign,point[2]-.07]);
+    const length=Math.max(5,camera.unit*.18*center.scale);
+    const width=length*.44;
+    shapes.push({depth:center.depth,draw(){
+      context.save();
+      context.translate(center.x,center.y);
+      context.rotate(Math.atan2(tip.y-center.y,tip.x-center.x));
+      for(const side of [-1,1]){
+        context.save();context.scale(side,1);
+        const shade=context.createRadialGradient(length*.64,-width*.31,.1,length*.54,0,length*.55);
+        shade.addColorStop(0,side>0?'#fff6db':'#ffdfaf');
+        shade.addColorStop(.44,color);
+        shade.addColorStop(1,side>0?'#925024':'#693923');
+        context.beginPath();
+        context.moveTo(.65,0);
+        context.bezierCurveTo(length*.21,-width*.35,length*.50,-width,length*.76,-width);
+        context.bezierCurveTo(length*1.12,-width,length*1.18,width*.77,length*.79,width);
+        context.bezierCurveTo(length*.51,width,length*.22,width*.35,.65,0);
+        context.closePath();
+        context.fillStyle=shade;context.fill();
+        context.restore();
+      }
+      context.restore();
+    }});
+  }
+
   function line(start, end, color, width=2, arrow=false) {
     const a=project(start), b=project(end);
     shapes.push({depth:(a.depth+b.depth)/2, draw() {
@@ -232,7 +260,7 @@ function createResearchScene(canvas, scene, onStep = () => {}) {
           const f=(local*.62+i*.32+(lower?.15:0))%1;
           const [x,y,z]=track(f,sign);
           if(orbital && !(step===2 && y>-.16)){
-            for(const side of [-1,1]) sphere([x+side*.073,y+side*.045*sign,z-side*.038],.055,color);
+            drawPOrbital([x,y,z],sign,color);
           }else {
             sphere([x,y,z],.073,orbital?blue:color);
             // The polarization glyph points along in-plane ±y, not along z flow.
@@ -260,14 +288,14 @@ function createResearchScene(canvas, scene, onStep = () => {}) {
       orbital?'Orbital flow can convert into spin near the interface':'Spin flows across the interface into the free layer',
       'The assist field breaks symmetry for deterministic writing',
       'PMA: the free layer switches from +z to −z',
-      'Free and reference layers are antiparallel  /  Higher resistance'
+      'TMR: antiparallel layers give higher resistance'
     ][step];
   }
 
   function switchingLegend(width,height,pad,t) {
     const step=Math.min(5,Math.floor(t/3));
     const colors=['#195b81','#89501f','#195b81','#775325','#245b54','#246345'];
-    const stages=['Spin Hall effect','Orbital Hall effect','Interface transfer','Spin torque + assist field','Perpendicular switching','MTJ readout'];
+    const stages=['Spin Hall effect','Orbital Hall effect','Interface transfer','Spin torque + assist field','Perpendicular switching','TMR readout'];
     context.font='700 '+Math.max(13,Math.min(19,width*.042))+'px Arial,sans-serif';
     context.fillStyle=colors[step];
     context.fillText(stages[step],pad,pad+7,width-2*pad);
