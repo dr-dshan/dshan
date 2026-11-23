@@ -1,131 +1,230 @@
+
 .research-main {
-  --ink:#102039; --ink-muted:#46586c; --accent:#095b98; --line-aed:#dbe5ef;
-  background:#fff; color:var(--ink);
+  --ink:#102039;
+  --ink-muted:#46586c;
+  --accent:#08696b;
+  --line-aed:#dce5eb;
+  color:var(--ink);
+  background:#f6f8fa;
 }
-.aed-skip {position:absolute; z-index:100; left:1rem; top:1rem; padding:.8rem; background:white; color:#102039; transform:translateY(-200%);}
+.aed-skip {position:absolute;z-index:100;left:1rem;top:1rem;padding:.8rem;background:white;color:#102039;transform:translateY(-200%);}
 .aed-skip:focus {transform:none;}
-:where(.research-main,.site-header) :focus-visible {outline:3px solid #258bd0; outline-offset:4px;}
+:where(.research-main,.site-header) :focus-visible {outline:3px solid #2a9695;outline-offset:4px;}
 .research-main [hidden] {display:none !important;}
 .research-main figure {margin:0;}
 .research-main p {line-height:1.65;}
-.research-main p:last-child {margin-bottom:0;}
-.research-main a:not(.aed-primary) {color:var(--accent); text-decoration:underline; text-underline-offset:.2em;}
-.aed-hero.page-head {background:linear-gradient(115deg,#f6f9fc,#e9f2fa); padding:clamp(2.3rem,5vw,5rem) 0;}
-.aed-hero-grid {display:grid; grid-template-columns:1.12fr 1fr; gap:clamp(1.5rem,5vw,4.5rem); align-items:center;}
-.aed-hero h1 {max-width:15ch; font-size:clamp(2.4rem,5vw,4.35rem); line-height:1.04; letter-spacing:-.045em; margin:.35em 0;}
-.aed-hero .breadcrumb {margin-bottom:1.35rem;}
-.aed-hero .lead {max-width:52ch; color:var(--ink-muted); font-size:1.125rem;}
-.aed-hero-figure img,.aed-original img {display:block; width:100%; height:auto; border-radius:12px;}
-.aed-hero-figure img {box-shadow:0 12px 32px #0f25352b;}
-.aed-primary {display:inline-flex; align-items:center; min-height:44px; margin-top:1rem; padding:.65rem 1rem; border-radius:7px; background:#0a548c; color:#fff; font-weight:700;}
-.aed-primary:hover {background:#103c65; color:#fff;}
+.research-main h2 {font-size:clamp(1.5rem,2.6vw,2.125rem);line-height:1.2;margin:0 0 1.35rem;letter-spacing:-.024em;}
+.research-main h3 {line-height:1.22;letter-spacing:-.018em;}
+.aed-roadmap-intro {padding-bottom:clamp(1.5rem,3.5vw,2.75rem);}
+.aed-themes {padding:clamp(2.5rem,4.7vw,3.75rem) 0;background:#fff;}
+.aed-themes h2 {text-align:left;}
+.aed-theme-grid {display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.85rem;}
+.aed-theme {display:flex;flex-direction:column;align-items:center;text-align:center;gap:.75rem;min-width:0;padding:.8rem .25rem;color:var(--ink);border-radius:5px;}
+.aed-theme:hover strong {color:var(--accent);text-decoration:underline;text-underline-offset:.18em;}
+.aed-theme svg {width:1.85rem;height:1.85rem;stroke:var(--accent);stroke-width:1.65;fill:none;stroke-linecap:round;stroke-linejoin:round;flex:none;}
+.aed-theme strong,.aed-theme small {display:block;}
+.aed-theme strong {line-height:1.28;font-size:.99rem;}
+.aed-theme small {margin-top:.35rem;color:var(--ink-muted);line-height:1.4;font-size:.86rem;}
 .aed-body {padding-bottom:clamp(2.5rem,6vw,5rem);}
-.aed-section {padding-top:clamp(2.6rem,6vw,5rem);}
-.aed-section h2 {font-size:clamp(1.8rem,3vw,2.6rem); line-height:1.15; margin:0 0 1.2rem; letter-spacing:-.03em;}
-.aed-roadmap,.aed-highlights {display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:1.1rem; margin:0; padding:0;}
-.aed-roadmap {list-style:none; }
-.aed-roadmap li,.aed-highlights article {position:relative; background:#f5f9fc; border:1px solid var(--line-aed); border-radius:12px; padding:1.1rem;}
-.aed-roadmap li {border-top:3px solid #227db6;}
-.aed-roadmap li:not(:last-child)::after {content:"→"; position:absolute; right:-1.03rem; top:.9rem; color:#095b98; font-weight:800;}
-.aed-roadmap h3,.aed-highlights h3 {margin:0 0 .55rem; font-size:1.07rem; line-height:1.3;}
-.aed-roadmap p,.aed-highlights p,.aed-subsections p,.aed-panel-lead {color:var(--ink-muted);}
-.aed-feedback {color:var(--ink-muted); text-align:center; padding:0 1rem;}
-.aed-feedback svg {display:block; width:100%; height:26px; stroke:#5190bc; stroke-width:1.5; fill:none;}
-.aed-feedback p {margin:.4rem 0 0;}
-.aed-tabs {display:flex; flex-wrap:wrap; gap:.5rem; margin:0 0 1.35rem;}
-.research-main .aed-tabs a {display:flex; align-items:center; min-height:44px; padding:.55rem .8rem; border:1px solid #a9c1d5; border-radius:7px; color:var(--ink); text-decoration:none; font-weight:700; font-size:.94rem;}
-.research-main .aed-tabs a:hover {background:#edf5fb;}
-.research-main .aed-tabs [aria-selected=true] {background:#0d3154; border-color:#0d3154; color:white;}
-.aed-panel {scroll-margin-top:7rem; border:1px solid var(--line-aed); border-radius:14px; padding:clamp(1rem,3vw,2rem); margin-bottom:1rem;}
-.aed-panel > h3 {font-size:clamp(1.5rem,3vw,2.15rem); margin:0; line-height:1.16;}
-.aed-panel-lead {font-size:1.12rem; margin:.65rem 0 1.5rem;}
-.aed-topic-grid {display:grid; grid-template-columns:1.07fr 1fr; gap:clamp(1.25rem,4vw,3rem); align-items:start;}
-.aed-subsections section + section {border-top:1px solid var(--line-aed); padding-top:1rem; margin-top:1rem;}
-.aed-subsections h4 {font-size:1.125rem; margin:0 0 .4rem;}
-.aed-subsections p {margin:0 0 .5rem;}
-.aed-subsections a {font-size:.93rem;}
-.aed-demo {border-radius:12px; overflow:hidden; border:1px solid var(--line-aed); background:#f5f9fc;}
-.aed-demo svg {display:block; width:100%; height:auto; background:radial-gradient(ellipse at center,#153656,#091a30);}
-.aed-demo svg text {fill:#deefff; font:15px system-ui,sans-serif; text-anchor:middle;}
-.aed-demo figcaption {padding:1rem;}
-.aed-demo h4 {font-size:1.1rem; margin:0;}
-.aed-demo p {font-size:.96rem; margin:.45rem 0 0;}
-.aed-controls {display:flex; gap:.5rem; align-items:center; flex-wrap:wrap; margin-top:.85rem;}
-.aed-controls button,.aed-controls select {min-height:44px; min-width:44px; border:1px solid #789ab8; border-radius:6px; background:white; color:#102039; padding:.45rem .65rem; font:inherit;}
-.aed-controls button {cursor:pointer; font-weight:700;}
-.aed-controls button:hover {background:#e5f1fa;}
-.aed-controls label {font-size:.94rem;}
-.aed-status:empty {display:none;}
-.aed-original {margin-top:.8rem; font-size:.94rem; color:var(--ink-muted);}
-.aed-original summary {min-height:44px; display:list-item; cursor:pointer; padding:.65rem 0;}
-.aed-highlights {margin-bottom:1rem;}
-.aed-highlights .aed-meta {font-size:.88rem; color:#285579; margin:0 0 .55rem;}
-.aed-opportunities {padding:clamp(1.15rem,4vw,2.7rem); border-radius:14px; background:#eaf3fb;}
-.aed-opportunities p {max-width:70ch;}
-
-/* Shared visual language for the interactive research figures. */
-.aed-demo svg {background:radial-gradient(ellipse at 52% 44%,#172f51,#071326 87%);}
-.aed-demo svg .viz-title,.aed-demo svg .viz-context {font-weight:750; font-size:11px; letter-spacing:.11em;}
-.aed-demo svg .viz-title {text-anchor:start; fill:#86e5ff;}
-.aed-demo svg .viz-context {text-anchor:end; fill:#b7cbe3;}
-.aed-demo svg .viz-label {font-size:13px; font-weight:600;}
-.aed-demo .viz-card {fill:#122743; fill-opacity:.8; stroke:#345473;}
-.aed-demo .viz-badge {fill:#182f4e; stroke:#547697;}
-.aed-demo .rail {stroke:#527397; stroke-width:1.4; fill:none;}
-.aed-demo .mirror {stroke-dasharray:4 6;}
-.aed-demo .spin,.aed-demo .trace {color:#78e4ff;}
-.aed-demo .sot {transition:transform .35s ease, color .35s ease;}
-.aed-demo.is-active .sot {transform:rotate(180deg); color:#ffaed2; transition-delay:.38s;}
-.aed-demo .viz-current,.aed-demo .viz-torque,.aed-demo .viz-read-flow {stroke-linecap:round; stroke-width:2.7; fill:none;}
-.aed-demo .viz-current {stroke:#ffb978; stroke-dasharray:12 24; opacity:0;}
-.aed-demo .viz-torque {stroke:#7ee7ff; opacity:.22;}
-.aed-demo.is-active .viz-current {animation:aed-current .78s ease both;}
-.aed-demo.is-active .viz-torque {animation:aed-torque .68s .12s ease both;}
-.aed-demo .viz-tail {stroke:#fa9760; stroke-width:3; stroke-linecap:round; opacity:.55;}
-.aed-demo.is-active .viz-carrier {animation:aed-carriers 1.7s var(--delay) linear infinite;}
-.aed-demo .viz-orbit {stroke:#6da3d4; stroke-opacity:.6; stroke-dasharray:2 3; fill:none;}
-.aed-demo .viz-pivot {fill:#bddaf6;}
-.aed-demo .viz-spin-vector {stroke:#7ce6ff; stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round; fill:none;}
-.aed-demo .viz-atom {fill:#bbec97; stroke:#507e4f; stroke-width:1.5;}
-.aed-demo .viz-lattice-wave {fill:none; stroke:#7db865; stroke-width:1.8;}
-.aed-demo .coupling {stroke:#dcaaff; fill:none; stroke-width:1.7; stroke-dasharray:4 4;}
-.aed-demo.is-active .coupling {animation:aed-coupling 1.25s linear infinite;}
-.aed-demo .viz-barrier {stroke:#ffcb7f; stroke-width:5; stroke-linecap:round;}
-.aed-demo .viz-read-flow {stroke:#8ae5ff; stroke-dasharray:3 7; opacity:.7; transition:opacity .3s;}
-.aed-demo .mtj-free {transition:transform .45s ease, color .45s ease;}
-.aed-demo.is-active .mtj-free {transform:rotate(180deg); color:#ffaed2;}
-.aed-demo.is-active .viz-read-flow {opacity:.2;}
-.aed-demo .viz-antiparallel,.aed-demo.is-active .viz-parallel {display:none;}
-.aed-demo.is-active .viz-antiparallel {display:inline;}
-.aed-demo .trace {stroke:currentColor; stroke-width:2.7; stroke-linejoin:round; fill:none;}
-.aed-demo .viz-sample-share,.aed-demo .viz-sample-point {fill:#78e4ff;}
-.aed-demo .viz-sample-share {transition:width .14s linear;}
-@keyframes aed-current {
-  0% {opacity:0; stroke-dashoffset:70;}
-  25%,65% {opacity:1;}
-  100% {opacity:0; stroke-dashoffset:0;}
-}
-@keyframes aed-torque {40% {opacity:1; stroke-width:3.8;}}
-@keyframes aed-carriers {
-  from {transform:translateX(0); opacity:0;}
-  15%,84% {opacity:1;}
-  to {transform:translateX(125px); opacity:0;}
-}
-@keyframes aed-coupling {to {stroke-dashoffset:-16;}}
-@media(max-width:880px) {
-  .aed-hero-grid,.aed-topic-grid {grid-template-columns:1fr;}
-  .aed-hero-figure {max-width:38rem;}
-  .aed-highlights {grid-template-columns:repeat(2,minmax(0,1fr));}
+.aed-section {padding-top:clamp(2.5rem,5vw,4.5rem);}
+.aed-project-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(1rem,2.4vw,1.75rem);}
+.aed-panel {scroll-margin-top:7.5rem;min-width:0;overflow:hidden;border:1px solid var(--line-aed);border-radius:12px;background:#fff;box-shadow:0 5px 15px #10203907;}
+.aed-panel:target {border-color:#479b97;box-shadow:0 0 0 2px #479b9733;}
+.aed-panel.aed-featured {grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);align-items:start;}
+.aed-project-copy {padding:clamp(1rem,2.35vw,1.65rem);}
+.aed-project-copy h3 {font-size:clamp(1.22rem,1.9vw,1.56rem);margin:0;}
+.aed-project-copy .aed-panel-lead {margin:.45rem 0 1rem;color:var(--accent);font-weight:700;}
+.aed-subsections section + section {border-top:1px solid var(--line-aed);padding-top:.65rem;margin-top:.65rem;}
+.aed-subsections h4 {font-size:1rem;margin:0 0 .2rem;}
+.aed-subsections p {margin:0;color:var(--ink-muted);font-size:.94rem;text-wrap:pretty;}
+.aed-art-stage {overflow:hidden;background:radial-gradient(ellipse at 52% 30%,#1b3656,#0c1d33 62%,#071527);}
+.aed-art-stage canvas {display:block;width:100%;height:auto;aspect-ratio:1.52;}
+.aed-art figcaption {padding:.7rem 1rem;border-bottom:1px solid var(--line-aed);background:#edf4f5;}
+.aed-art figcaption p {margin:0;color:var(--ink-muted);font-size:.89rem;}
+.aed-featured .aed-art {background:#f4f8fa;}
+.aed-story {padding:.75rem 1rem .9rem;}
+.aed-story .aed-step-description {margin:.35rem 0 0;color:var(--ink);font-size:.93rem;}
+.aed-roadmap {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem;margin:0;padding:0;list-style:none;}
+.aed-roadmap li {position:relative;border:1px solid var(--line-aed);border-top:3px solid #328c88;border-radius:9px;background:#fff;padding:1rem;}
+.aed-roadmap li:not(:last-child)::after {content:"→";position:absolute;right:-.98rem;top:.85rem;color:var(--accent);font-weight:800;}
+.aed-roadmap h4 {margin:0 0 .35rem;font-size:1.02rem;}
+.aed-roadmap p,.aed-feedback p {margin:0;color:var(--ink-muted);}
+.aed-roadmap p {text-align:justify;text-align-last:left;}
+.aed-feedback {text-align:center;padding:0 .8rem;}
+.aed-feedback svg {display:block;width:100%;height:25px;stroke:#438e91;stroke-width:1.5;fill:none;}
+.aed-feedback p {margin-top:.25rem;}
+.aed-primary {display:inline-flex;align-items:center;min-height:44px;margin-top:1rem;padding:.55rem .95rem;border-radius:6px;background:#0b6266;color:#fff;font-weight:700;}
+.aed-primary:hover {background:#0d4651;color:#fff;}
+@media(max-width:960px) {
+  .aed-theme-grid {grid-template-columns:repeat(3,minmax(0,1fr));}
+  .aed-panel.aed-featured {grid-template-columns:1fr;}
 }
 @media(max-width:680px) {
-  .aed-roadmap {grid-template-columns:1fr;}
-  .aed-roadmap li:not(:last-child)::after {content:"↓"; top:auto; bottom:-1.15rem; left:1rem; right:auto; z-index:1;}
-  .aed-feedback {padding:.75rem 0 0; text-align:left;}
+  .aed-theme-grid {grid-template-columns:repeat(2,minmax(0,1fr));}
+  .aed-project-grid,.aed-roadmap {grid-template-columns:1fr;}
+  .aed-roadmap li:not(:last-child)::after {content:"↓";top:auto;bottom:-1.02rem;left:.9rem;right:auto;z-index:1;}
+  .aed-feedback {padding:.6rem 0 0;text-align:left;}
   .aed-feedback svg {display:none;}
 }
-@media(max-width:450px) {.aed-highlights {grid-template-columns:1fr;}}
 @media(prefers-reduced-motion:reduce) {
-  .research-main *, .research-main *::before, .research-main *::after {animation:none !important; transition:none !important; scroll-behavior:auto !important;}
-  .aed-demo.is-active .viz-torque {opacity:1;}
-  .aed-demo.is-active .coupling {stroke-dasharray:none;}
+  .research-main *, .research-main *::before, .research-main *::after {animation:none !important;transition:none !important;scroll-behavior:auto !important;}
 }
+
+.aed-overview-card {
+  display:flex;flex-direction:column;min-width:0;overflow:hidden;
+  background:#fff;border:1px solid var(--line-aed);border-radius:12px;
+  box-shadow:0 4px 12px #10203909;
+}
+.aed-project-media {display:block;width:100%;height:auto;aspect-ratio:5/3;object-fit:cover;background:#061529;}
+.aed-overview-copy {display:flex;flex:1;flex-direction:column;padding:clamp(1rem,2.5vw,1.7rem);}
+.aed-overview-copy h3 {margin:0;font-size:clamp(1.12rem,1.6vw,1.34rem);}
+.aed-overview-copy p {margin:.65rem 0;color:var(--ink-muted);}
+.aed-project-people {display:flex;flex-wrap:wrap;gap:.35rem;padding:0;margin:.35rem 0 .9rem;list-style:none;}
+.aed-project-people li {border-radius:99px;background:#eaf6f4;color:#185d60;padding:.22rem .6rem;font-size:.85rem;}
+.aed-overview-card {scroll-margin-top:7.5rem;}
+.aed-overview-card:target {border-color:#479b97;}
+.aed-project-image-link {display:block;position:relative;}
+.aed-project-image-link:focus-visible {outline-offset:-4px;}
+.aed-project-image-link:hover .aed-project-media {filter:brightness(1.07);}
+.aed-project-details,.aed-return {width:fit-content;color:var(--accent);text-decoration:underline;text-underline-offset:.18em;font-weight:700;}
+.aed-project-details {display:inline-flex;align-items:center;min-height:44px;margin-top:auto;}
+.aed-sr-only {position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;}
+
+.aed-motion-diagram svg {display:block;width:100%;height:auto;}
+.aed-motion-diagram.is-playing .aed-carrier {animation:aed-drift-visual 2s var(--phase) ease-in-out infinite;}
+.aed-motion-diagram.is-playing .aed-flow-trail {animation:aed-flow-visual 2s linear infinite;}
+.aed-motion-diagram.is-playing .aed-precess {animation:aed-spin-visual 1.25s var(--phase) linear infinite;}
+.aed-motion-diagram.is-playing .aed-vibrate {animation:aed-lattice-visual 1.25s var(--phase) ease-in-out infinite;}
+@keyframes aed-drift-visual {0%,100% {transform:translateX(0);opacity:.66;} 48% {transform:translateX(33px);opacity:1;}}
+@keyframes aed-flow-visual {to {stroke-dashoffset:-164;}}
+@keyframes aed-spin-visual {0%,100% {transform:skewX(-25deg);} 25% {transform:scaleY(.8);} 50% {transform:skewX(25deg);} 75% {transform:scaleY(1.08);}}
+@keyframes aed-lattice-visual {25% {transform:translateY(-10px);} 75% {transform:translateY(10px);}}
+
+.aed-detail-intro {margin-bottom:1.25rem;}
+.aed-detail-intro .lead {margin-top:0;}
+.aed-detail-grid {display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);align-items:start;border:1px solid var(--line-aed);border-radius:12px;overflow:hidden;background:#fff;}
+.aed-detail-grid .aed-project-copy h2 {margin:0 0 1rem;font-size:1.35rem;}
+@media(max-width:820px) {.aed-detail-grid {grid-template-columns:1fr;}}
+
+.aed-project-hero {position:relative;isolation:isolate;overflow:hidden;background:#081a30;color:#fff;}
+.aed-project-hero img,.aed-project-hero::after {position:absolute;inset:0;width:100%;height:100%;z-index:-1;}
+.aed-project-hero img {object-fit:cover;object-position:50% 48%;}
+.aed-project-hero::after {content:"";background:linear-gradient(90deg,#061329ef 0%,#091b2fda 54%,#091b2f8c 100%);}
+.aed-project-hero .container {padding-top:clamp(2.15rem,5vw,4rem);padding-bottom:clamp(2rem,4.6vw,3.75rem);animation:aed-project-arrive .52s ease-out both;}
+.aed-project-hero a {display:inline-block;color:#cfe5f4;font-weight:700;text-underline-offset:.23em;font-size:.92rem;}
+.aed-project-hero h1 {margin:.6rem 0 0;max-width:28ch;color:#fff;font-size:clamp(1.9rem,4vw,2.625rem);line-height:1.13;text-wrap:balance;}
+.aed-project-detail-layout {display:grid;grid-template-columns:minmax(0,2.05fr) minmax(0,1fr);gap:clamp(1.25rem,4vw,3rem);padding-top:clamp(1.85rem,4vw,3rem);animation:aed-project-arrive .58s .09s ease-out both;}
+.aed-project-main>.lead {margin:0 0 1.4rem;color:var(--ink-muted);}
+.aed-methods {margin:0 0 1.7rem;}
+.aed-sidebar-card h2 {font-size:1.13rem;letter-spacing:0;margin:0 0 .65rem;}
+.aed-methods h2 {font-size:clamp(1.35rem,2.4vw,1.65rem);font-weight:800;color:#102039;letter-spacing:-.02em;margin:0 0 .85rem;}
+.aed-methods .aed-art + .aed-art {margin-top:1.2rem;}
+.aed-methods h3 {font-size:1rem;font-weight:650;color:#33566d;margin:0 0 .3rem;}
+.aed-methods .aed-art {overflow:hidden;border:1px solid var(--line-aed);border-radius:12px;background:#fff;}
+.aed-sidebar-card {background:#fff;border:1px solid var(--line-aed);border-radius:12px;padding:1.2rem;margin-bottom:1rem;box-shadow:0 3px 9px #10203909;}
+.aed-sidebar-card .aed-project-people {margin:0;}
+.aed-paper-list {list-style:none;padding:0;margin:0;}
+.aed-paper-list li + li {margin-top:.8rem;}
+.aed-publications {font-family:Arial,Helvetica,sans-serif;background:#f4f7f9;border-color:#e4ebf1;box-shadow:none;}
+.aed-publications h2 {color:#485f71;font-size:.98rem;font-weight:650;}
+.aed-paper-title {display:block;color:#40586b;font-size:.85rem;font-weight:400;line-height:1.38;overflow-wrap:anywhere;}
+a.aed-paper-title {text-decoration:none;}
+a.aed-paper-title:hover,a.aed-paper-title:focus-visible {color:var(--accent);text-decoration:underline;text-underline-offset:.16em;}
+.aed-paper-venue {display:block;margin-top:.16rem;color:#546b7d;font-size:.8rem;line-height:1.4;}
+.aed-paper-more {margin-top:.55rem;}
+.aed-paper-more summary {color:#506b7f;cursor:pointer;width:fit-content;padding:.4rem 0;min-height:36px;font-size:.86rem;font-weight:700;}
+.aed-paper-more[open] .aed-paper-list {margin-top:.25rem;}
+.aed-paper-view-fewer,.aed-paper-more[open] .aed-paper-view-all {display:none;}
+.aed-paper-more[open] .aed-paper-view-fewer {display:inline;}
+@keyframes aed-project-arrive {from {opacity:0;transform:translateY(13px);} to {opacity:1;transform:translateY(0);}}
+@media(max-width:780px) {.aed-project-detail-layout {grid-template-columns:1fr;}.aed-project-sidebar {display:grid;gap:1rem;}.aed-sidebar-card {margin:0;}}
+@media(prefers-reduced-motion:reduce) {.aed-project-hero .container,.aed-project-detail-layout {animation:none;}}
+
+.aed-theme > svg,.aed-project-media {transition:transform .28s ease;}
+.aed-theme strong,.aed-overview-copy h3 {transition:color .22s ease;}
+.aed-project-image-link {overflow:hidden;}
+.aed-theme:focus-visible strong,.aed-overview-card:focus-within h3 {color:var(--accent);}
+@media(hover:hover) and (pointer:fine) {
+  .aed-theme:hover > svg {transform:scale(1.10);}
+  .aed-theme:hover strong,.aed-overview-card:hover h3 {color:var(--accent);}
+  .aed-project-image-link:hover .aed-project-media {transform:scale(1.035);filter:none;}
+}
+
+.aed-vision {padding-top:clamp(2rem,4vw,3.5rem);}
+.aed-vision h2 {margin-bottom:.6rem;}
+.aed-vision > p {max-width:75ch;color:var(--ink-muted);margin:0;}
+.aed-feedback p {font-size:.86rem;}
+
+.aed-vision-path {margin-top:clamp(1.4rem,3vw,2.15rem);padding-top:1.05rem;border-top:1px solid var(--line-aed);}
+.aed-vision-path>h3 {font-size:clamp(1.15rem,2vw,1.4rem);font-weight:700;color:var(--accent);margin:0 0 .95rem;}
+.aed-focus-intro {margin:0 0 1rem;color:var(--ink-muted);max-width:68ch;}
+
+.aed-vision-path {position:relative;background:linear-gradient(150deg,#eef5f8,#f9fcfd 52%,#edf6f4);border:1px solid #d9e7ee;border-radius:16px;padding:clamp(1rem,2vw,1.6rem);}
+.aed-roadmap {gap:clamp(.8rem,1.35vw,1.15rem);}
+.aed-roadmap li {border:1px solid #d6e5eb;border-top:3px solid var(--road-accent);border-radius:12px;background:linear-gradient(155deg,#fff,#f3f9fa);padding:clamp(.8rem,1.5vw,1.15rem);box-shadow:0 3px 9px #1034500a;}
+.aed-roadmap li:nth-child(1) {--road-accent:#347e9b;--road-tint:#e9f4f8;}
+.aed-roadmap li:nth-child(2) {--road-accent:#357f82;--road-tint:#e6f4f3;}
+.aed-roadmap li:nth-child(3) {--road-accent:#526a9b;--road-tint:#edf0f9;}
+.aed-roadmap li:nth-child(4) {--road-accent:#307d68;--road-tint:#eaf5ef;}
+.aed-roadmap-icon {display:grid;place-items:center;width:2.45rem;height:2.45rem;margin-bottom:.65rem;border-radius:10px;background:var(--road-tint);color:var(--road-accent);}
+.aed-roadmap-icon svg {fill:none;stroke:currentColor;stroke-width:1.35;stroke-linecap:round;stroke-linejoin:round;}
+.aed-roadmap li:not(:last-child)::after {top:1.42rem;}
+.aed-feedback {margin-top:.38rem;}
+.aed-feedback p {color:#37586d;font-size:.83rem;}
+@media(max-width:680px) {.aed-roadmap li:not(:last-child)::after {top:auto;}}
+
+.aed-motion-diagram.is-playing .aed-exchange-static {opacity:0;}
+.aed-motion-diagram.is-playing .aed-exchange-forward {animation:aed-exchange-fwd 12s linear infinite;}
+.aed-motion-diagram.is-playing .aed-exchange-return {animation:aed-exchange-rev 12s linear infinite;}
+.aed-motion-diagram.is-playing .aed-exchange-pulse {animation:aed-exchange-travel 12s linear infinite;}
+.aed-motion-diagram.is-playing .aed-source-halo {animation:aed-exchange-charge 12s linear infinite;}
+.aed-motion-diagram.is-playing .aed-spin-halo {animation:aed-exchange-spin 12s linear infinite;}
+.aed-motion-diagram.is-playing .aed-lattice-halo {animation:aed-exchange-lattice 12s linear infinite;}
+@keyframes aed-exchange-fwd {0%,44% {opacity:1;} 48%,100% {opacity:0;}}
+@keyframes aed-exchange-rev {0%,48% {opacity:0;} 51%,94% {opacity:1;} 100% {opacity:0;}}
+@keyframes aed-exchange-travel {
+  0%,6% {transform:translateY(0);opacity:0;}
+  9% {transform:translateY(0);opacity:1;}
+  22% {transform:translateY(131px);opacity:1;}
+  29% {transform:translateY(131px);opacity:1;}
+  43% {transform:translateY(255px);opacity:1;}
+  48%,52% {transform:translateY(255px);opacity:0;}
+  55% {transform:translateY(255px);opacity:1;}
+  68%,74% {transform:translateY(131px);opacity:1;}
+  89% {transform:translateY(0);opacity:1;}
+  95%,100% {transform:translateY(0);opacity:0;}
+}
+@keyframes aed-exchange-charge {0%,5%,20%,80%,100% {opacity:.08;} 10%,88%,92% {opacity:.82;}}
+@keyframes aed-exchange-spin {0%,16%,34%,60%,82%,100% {opacity:.08;} 24%,28%,69%,73% {opacity:.82;}}
+@keyframes aed-exchange-lattice {0%,36%,64%,100% {opacity:.08;} 44%,51%,55% {opacity:.82;}}
+@media(prefers-reduced-motion:reduce) {.aed-motion-diagram.is-playing .aed-exchange-static {opacity:1;}}
+
+/* Muted heading colors coordinated with each research illustration. */
+[data-research-theme="transport"] {--research-heading:#2d4d66;--research-hover:#155b83;--research-light:#e3f3ff;}
+[data-research-theme="dynamics"] {--research-heading:#31586b;--research-hover:#1b6380;--research-light:#def5ff;}
+[data-research-theme="materials"] {--research-heading:#474b68;--research-hover:#4b5689;--research-light:#eeedff;}
+[data-research-theme="computing"] {--research-heading:#255752;--research-hover:#0d6862;--research-light:#dffaf3;}
+[data-research-theme="probabilistic"] {--research-heading:#494566;--research-hover:#5a4785;--research-light:#f2eaff;}
+[data-research-theme] :is(.aed-overview-copy h3,.aed-methods h3) {color:var(--research-heading);}
+.aed-theme[data-research-theme] strong {color:var(--research-heading);}
+.aed-theme[data-research-theme] svg {stroke:var(--research-hover);}
+.aed-theme[data-research-theme]:is(:hover,:focus-visible) strong,
+.aed-overview-card[data-research-theme]:is(:hover,:focus-within) .aed-overview-copy h3 {color:var(--research-hover);}
+[data-research-theme] .aed-project-hero h1 {color:var(--research-light);}
+.aed-roadmap h4 {color:color-mix(in srgb,var(--ink) 63%,var(--road-accent));}
+
+/* Use a consistent rag on the final line of each research paragraph. */
+.research-main p {text-align:justify;text-align-last:left;text-wrap:wrap;}
+
+.aed-art[data-scene="0"] .aed-art-stage {background:radial-gradient(ellipse at 45% 23%,#f9fcff,#e2edf5 87%);}
+.aed-art[data-scene="2"] .aed-art-stage {background:radial-gradient(ellipse at 42% 31%,#194448,#09242b 79%);}
+.aed-art[data-scene="3"] .aed-art-stage,.aed-art[data-scene="5"] .aed-art-stage {background:radial-gradient(ellipse at 52% 31%,#393657,#171d35 76%);}
+.aed-art[data-scene="4"] .aed-art-stage {background:radial-gradient(ellipse at 55% 23%,#364c68,#202d47 82%);}
+.aed-overview-card[data-research-theme="materials"] .aed-project-media {background:#e6eef5;}
+
+.aed-art[data-scene="1"] .aed-art-stage {background:radial-gradient(ellipse at 36% 26%,#f7fcff,#e5eef5 84%); }
+
+.aed-recruiting {color:var(--ink-muted);font-size:.9rem;margin:.35rem 0 .65rem;}
+
+.research-main .aed-feedback p {white-space:normal;text-align:center;text-align-last:center;}
+@media(max-width:900px) {.research-main .aed-feedback p {text-align:left;text-align-last:left;}}

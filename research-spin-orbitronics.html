@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Efficient Write Channels for Next-Generation MRAM | AED Lab</title>
+
+  <link rel="stylesheet" href="./style.css">
+
+  <meta name="description" content="Switch magnetic bits reliably with less write energy.">
+  <link rel="stylesheet" href="./research-aed.css">
+
+  
+
+  <link rel="stylesheet" href="header-brand.css">
+
+  <style id="unified-mobile-nav">
+    /* Unified mobile/tablet navigation; desktop navigation is unchanged. */
+    .mobile-menu-toggle{
+      display:none; appearance:none; border:0; background:transparent;
+      color:inherit; font:inherit; cursor:pointer; padding:8px; margin-left:auto; line-height:1;
+    }
+    .mobile-menu-toggle .bar{
+      display:block; width:24px; height:2px; margin:5px 0;
+      background:currentColor; border-radius:2px;
+    }
+    @media (max-width:900px){
+      .site-header .nav,.header .header-inner{
+        position:relative; display:flex; align-items:center;
+        justify-content:space-between; flex-wrap:wrap;
+      }
+      .mobile-menu-toggle{display:block;}
+      .site-header .menu,.header .menu{
+        display:none !important; width:100%; flex-direction:column;
+        align-items:stretch; gap:0; padding:10px 0 14px;
+      }
+      .site-header .menu.is-open,.header .menu.is-open{display:flex !important;}
+      .site-header .menu a,.header .menu a{
+        display:block; width:100%; padding:12px 4px;
+        border-bottom:1px solid rgba(255,255,255,.08);
+      }
+    }
+  </style>
+
+  <noscript><style>.site-header .menu#mobile-main-menu {display:flex !important}.site-header .mobile-menu-toggle {display:none}</style></noscript>
+</head>
+
+<body>
+  <a class="aed-skip" href="#research-main">Skip to research content</a>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+
+      <a class="brand brand-logo" href="./" aria-label="DS Han Lab. Home">
+      <img
+        src="./Images/Logo/ds-han-lab-logo.png"
+        alt="DS Han Lab."
+      >
+    </a>
+
+      <button class="mobile-menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-main-menu">
+  <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+</button>
+
+      <div class="menu" id="mobile-main-menu">
+        <a href="./">HOME</a>
+        <a href="research.html" aria-current="page">RESEARCH</a>
+        <a href="people.html">PEOPLE</a>
+        <a href="publications.html">RESEARCH OUTPUTS</a>
+        <a href="news.html">NEWS</a>
+        <a href="mailto:dshan@kist.re.kr">CONTACT</a>
+      
+        <a href="#" data-private-route="/wiki">WIKI</a>
+      </div>
+
+    </nav>
+  </header>
+
+  <main class="research-main" data-research-theme="transport" id="research-main" tabindex="-1">
+    <section class="aed-project-hero" aria-labelledby="project-title">
+      <img src="./Images/Projects/spin-orbitronics-cover.svg" alt="" width="900" height="540" fetchpriority="high">
+      <div class="container">
+        <a href="./research.html#transport">← Back to Research</a>
+        <h1 id="project-title">Efficient Write Channels for Next-Generation MRAM</h1>
+      </div>
+    </section>
+    <div class="container aed-body">
+      <div class="aed-project-detail-layout">
+        <article class="aed-project-main">
+          <p class="lead">Switch magnetic bits reliably with less write energy.</p>
+          <section class="aed-methods" aria-labelledby="research-focus"><h2 id="research-focus">Research Focus</h2>
+            <p class="aed-focus-intro">Follow the charge-to-torque path to design faster, lower-energy magnetic writes.</p>
+            <div class="aed-subsections">
+  <section><h3>Fundamental Physics</h3><p>Trace spin and orbital currents from generation to torque at the magnetic interface.</p></section>
+  <section><h3>Materials Science</h3><p>Tune channels and interfaces to deliver more torque per ampere while limiting resistive loss.</p></section>
+  <section><h3>Device Demonstration</h3><p>Write the free layer with a lateral pulse. Read its state through the tunnel barrier.</p></section>
+  <section><h3>Application</h3><p>Evaluate lower-energy embedded MRAM at matched retention, read margin and switching error.</p></section></div>
+          </section>
+          <section class="aed-methods" aria-labelledby="project-visual"><h2 id="project-visual">Interactive Illustration</h2><figure class="aed-art" data-scene="0"><div class="aed-art-stage"><canvas role="img" aria-label="Spin-orbit torque switching" width="640" height="420">Spin-orbit torque switching</canvas></div><figcaption><p>Electrons drift left, opposite to the conventional charge current. The Hall effect separates opposite spin or orbital polarizations toward the two film surfaces. The upper branch can deliver angular momentum to the free layer.</p></figcaption><div class="aed-story" hidden><template>Spin Hall effect. Charge current flows along x. Transverse spin transport is along z and its spin polarization is along y, with opposite accumulation signs across the channel.</template><template>Orbital Hall effect. The same charge current can generate orbital angular momentum flow along z, with in-plane orbital polarization.</template><template>Spin can enter the free layer directly. Diffusing orbital angular momentum can contribute to torque when spin-orbit coupling converts it into spin.</template><template>The spin torque tilts the free-layer magnetization. An in-plane assist field along x is one way to break the symmetry for deterministic switching.</template><template>Perpendicular magnetic anisotropy favors the two out-of-plane states. The free layer reverses and settles along −z, while the reference stays along +z.</template><template>The read current passes through the MgO barrier. The antiparallel state gives higher tunnel resistance than the parallel state.</template><p class="aed-step-description">Follow the spin and orbital Hall paths into a perpendicular magnetic tunnel junction.</p></div></figure></section>
+          <section class="aed-methods" aria-labelledby="project-impact"><h2 id="project-impact">Impact</h2><p>Writing is a major energy and reliability constraint for magnetic memory. Finding how charge is converted into usable torque can guide the choice of channel and interface, so a smaller write pulse can switch a bit reliably.</p></section>
+        </article>
+        <aside class="aed-project-sidebar" aria-label="Project information">
+          <section class="aed-sidebar-card"><h2>Team Members</h2><ul class="aed-project-people" aria-label="AED Lab research team"><li>Dr. Dong-Soo Han (PI)</li><li>Mr. Seung-Jin Kang</li><li>Ms. Siyeon An</li><li>Dr. Jae-Hyun Ha</li></ul></section>
+          <section class="aed-sidebar-card aed-publications"><h2>Related Publications</h2><ul class="aed-paper-list">
+<li><span class="aed-paper-title">Magnetization switching driven by magnonic spin dissipation</span><span class="aed-paper-venue">Nature Communications 16 (1), 5859 (2025)</span></li>
+<li><span class="aed-paper-title">Efficiency Enhancement in Spin-Orbit Torque MRAM With Low Resistivity and High Spin Hall Angle in Ta/Pt Multilayer Channel</span><span class="aed-paper-venue">IEEE Transactions on Magnetics · 2025</span></li>
+<li><span class="aed-paper-title">Tuning Spin‐Orbit Torques Across the Phase Transition in VO<sub>2</sub>/NiFe Heterostructure</span><span class="aed-paper-venue">Advanced Functional Materials 32 (17), 2111555 (2022)</span></li>
+<li><span class="aed-paper-title">Electric-Field Control of Spin-Orbit Torques in Perpendicularly Magnetized Films</span><span class="aed-paper-venue">Physical Review Letters 124 (21), 217701 (2020)</span></li>
+<li><span class="aed-paper-title">Enhancement of spin Hall conductivity in W–Ta alloy</span><span class="aed-paper-venue">Applied Physics Letters 117 (14) (2020)</span></li>
+</ul>
+<details class="aed-paper-more"><summary><span class="aed-paper-view-all">View all</span><span class="aed-paper-view-fewer">View fewer</span></summary>
+<ul class="aed-paper-list">
+<li><span class="aed-paper-title">Evidence for phonon skew scattering in the spin Hall effect of platinum</span><span class="aed-paper-venue">Physical Review B 97 (10), 100405 (2018)</span></li>
+<li><span class="aed-paper-title">Composition- and ferromagnet-dependent spin-orbit torques and the possible role of orbital transport in Pt<sub>1−x</sub>Ir<sub>x</sub> heterostructures</span></li>
+</ul></details></section>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+      <div>
+        <strong>Advanced Electronic Devices Lab (AED Lab.)</strong><br>
+        Center for Semiconductor Technology, KIST
+      </div>
+
+      <div>
+        <strong>Contact</strong><br>
+        dshan@kist.re.kr · +82-2-958-5405
+      </div>
+
+      <div>
+        © 2026 Dong-Soo Han
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="./research-3d.js" defer></script>
+  <script src="./research-aed.js" defer></script>
+
+  
+<script id="unified-mobile-nav-script">
+(function(){
+  const toggle=document.querySelector('.mobile-menu-toggle');
+  const menu=document.querySelector('.site-header .menu, .header .menu');
+  if(!toggle||!menu)return;
+  toggle.addEventListener('click',function(){
+    const open=menu.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded',open?'true':'false');
+    toggle.setAttribute('aria-label',open?'Close menu':'Open menu');
+  });
+  menu.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape' && menu.classList.contains('is-open')) {
+      toggle.click();
+      toggle.focus();
+    }
+  });
+  menu.querySelectorAll('a').forEach(function(link){
+    link.addEventListener('click',function(){
+      if(window.innerWidth<=900){
+        menu.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded','false');
+        toggle.setAttribute('aria-label','Open menu');
+      }
+    });
+  });
+  window.addEventListener('resize',function(){
+    if(window.innerWidth>900){
+      menu.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded','false');
+      toggle.setAttribute('aria-label','Open menu');
+    }
+  });
+})();
+</script>
+
+  <script src="./research-image-menu.js" defer></script>
+  <script src="./private-app-config.js"></script>
+</body>
+</html>

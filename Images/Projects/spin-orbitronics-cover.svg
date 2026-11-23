@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 576" width="960" height="576"><defs>
+<linearGradient id="bg" x2="0" y2="1"><stop stop-color="#f7fbfd"/><stop offset="1" stop-color="#dce8f0"/></linearGradient>
+<linearGradient id="card" x2="0" y2="1"><stop stop-color="#fff"/><stop offset="1" stop-color="#edf4f8"/></linearGradient>
+<linearGradient id="channelTop" x2="1" y2="1"><stop stop-color="#d3e8f4"/><stop offset="1" stop-color="#98bdd7"/></linearGradient>
+<linearGradient id="channelFace" x2="0" y2="1"><stop stop-color="#c2dbea"/><stop offset=".48" stop-color="#a5c4db"/><stop offset="1" stop-color="#7d9db9"/></linearGradient>
+<linearGradient id="channelEdge" x2="1" y2="1"><stop stop-color="#9ebbd0"/><stop offset="1" stop-color="#6387a1"/></linearGradient>
+<linearGradient id="freeTop" x2="1" y2="1"><stop stop-color="#f1fffb"/><stop offset="1" stop-color="#b8dad3"/></linearGradient>
+<linearGradient id="freeFace" x2="0" y2="1"><stop stop-color="#d6eee7"/><stop offset="1" stop-color="#94bfb8"/></linearGradient>
+<radialGradient id="lobe" cx=".28" cy=".25" r=".82"><stop stop-color="#fff8df"/><stop offset=".42" stop-color="#e7ac66"/><stop offset="1" stop-color="#995536"/></radialGradient>
+<radialGradient id="electron" cx=".30" cy=".25" r=".82"><stop stop-color="#f7feff"/><stop offset=".43" stop-color="#8dd7f3"/><stop offset="1" stop-color="#3d7faf"/></radialGradient>
+<linearGradient id="arrow-ink" x2="0" y2="1"><stop stop-color="#b3e4de"/><stop offset=".42" stop-color="#4c9391"/><stop offset="1" stop-color="#225458"/></linearGradient><linearGradient id="arrow-spin" x2="0" y2="1"><stop stop-color="#d6f5ff"/><stop offset=".42" stop-color="#59b9df"/><stop offset="1" stop-color="#21739d"/></linearGradient><linearGradient id="arrow-orb" x2="0" y2="1"><stop stop-color="#fff1c9"/><stop offset=".42" stop-color="#ecaa58"/><stop offset="1" stop-color="#9b592e"/></linearGradient><linearGradient id="arrow-current" x2="0" y2="1"><stop stop-color="#f4dbe7"/><stop offset=".42" stop-color="#d087a6"/><stop offset="1" stop-color="#914f77"/></linearGradient>
+</defs>
+<rect width="960" height="576" fill="url(#bg)"/>
+<g font-family="Arial,sans-serif">
+<text x="480" y="62" text-anchor="middle" font-size="34" font-weight="700" fill="#223b52">Spin &amp; orbital transport in multilayers</text>
+<text x="480" y="91" text-anchor="middle" font-size="17" fill="#526c82">Hall deflection in a magnetic multilayer</text>
+<g transform="translate(43 114)" style="--edge:#246782">
+<rect width="422" height="406" rx="20" fill="#d6e2e9" opacity=".46" transform="translate(0 3)"/>
+<rect width="422" height="406" rx="20" fill="url(#card)" stroke="#c8d9e4"/>
+<path d="M20 1h382" stroke="#fff" stroke-width="2" opacity=".85"/>
+<text x="211" y="50" text-anchor="middle" font-size="26" font-weight="700" fill="#246782">Spin Hall effect</text>
+<ellipse cx="214" cy="283" rx="137" ry="30" fill="#b1c6d6" opacity=".29"/>
+<g stroke-width="1.4" stroke-linejoin="round">
+ <path d="M65 206 257 229 344 181 152 158Z" fill="url(#channelTop)" stroke="#86a8bb"/>
+ <path d="M65 206v67l192 23v-67Z" fill="url(#channelFace)" stroke="#7c9fb7"/>
+ <path d="m257 229 87-48v67l-87 48Z" fill="url(#channelEdge)" stroke="#6e94aa"/>
+ <path d="m107 171 150 18 65-36-150-18Z" fill="url(#freeTop)" stroke="#86b5ad"/>
+ <path d="M107 171v32l150 18v-32Z" fill="url(#freeFace)" stroke="#82a9a5"/>
+ <path d="m257 189 65-36v31l-65 37Z" fill="#86adb0" stroke="#769995"/>
+ <path d="M68 208l188 23m3-2 82-45M111 170l144 18" stroke="#e5f6ff" fill="none" opacity=".8"/>
+</g>
+<path d="M252 131h51" stroke="#628681" fill="none"/>
+<text x="307" y="135" font-size="14" font-weight="700" fill="#426666">Free layer</text>
+<path d="M285 263l32 11" stroke="#6686a3" fill="none"/>
+<text x="318" y="293" font-size="14" font-weight="700" fill="#456580">Write channel</text>
+<g transform="translate(216 163) rotate(-90)"><path d="M1 -3.9439999999999995H46.239999999999995V-10.54Q46.239999999999995 -11.9 48.687999999999995 -10.336L68 0 48.687999999999995 10.336Q46.239999999999995 11.9 46.239999999999995 10.54V3.9439999999999995H1Q-1 3.9439999999999995 -1 0Q-1 -3.9439999999999995 1 -3.9439999999999995Z" transform="translate(0 2)" fill="var(--edge)" opacity=".24"/><path d="M1 -3.9439999999999995H46.239999999999995V-10.54Q46.239999999999995 -11.9 48.687999999999995 -10.336L68 0 48.687999999999995 10.336Q46.239999999999995 11.9 46.239999999999995 10.54V3.9439999999999995H1Q-1 3.9439999999999995 -1 0Q-1 -3.9439999999999995 1 -3.9439999999999995Z" fill="url(#arrow-ink)" stroke="url(#arrow-ink)" stroke-width=".5"/><path d="M4 -2.176H44.239999999999995" fill="none" stroke="#fff" stroke-opacity=".56" stroke-width=".65"/></g>
+<text x="228" y="108" font-size="19" font-weight="700" fill="#285d59">M<tspan dy="4" font-size="13">z</tspan></text>
+<path d="M261 255C221 251 192 254 169 242S141 211 137 187" fill="none" stroke="#2389b1" stroke-opacity=".19" stroke-width="9" stroke-linecap="round"/>
+<path d="M261 255C221 251 192 254 169 242S141 211 137 187m-4 9 4-9 7 6" fill="none" stroke="#2389b1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M261 255C219 253 185 251 161 256S133 267 119 273" fill="none" stroke="#2389b1" stroke-width="1.5" stroke-dasharray="4 5" opacity=".66"/>
+<circle cx="123" cy="244" r="14" fill="url(#electron)" stroke="#fff" stroke-opacity=".65"/>
+<g transform="translate(131 240) rotate(-29.42745640318974)"><path d="M1 -1.7399999999999998H35.17722635447622V-4.65Q35.17722635447622 -5.25 36.25722635447622 -4.5600000000000005L44.77722635447622 0 36.25722635447622 4.5600000000000005Q35.17722635447622 5.25 35.17722635447622 4.65V1.7399999999999998H1Q-1 1.7399999999999998 -1 0Q-1 -1.7399999999999998 1 -1.7399999999999998Z" transform="translate(0 2)" fill="var(--edge)" opacity=".24"/><path d="M1 -1.7399999999999998H35.17722635447622V-4.65Q35.17722635447622 -5.25 36.25722635447622 -4.5600000000000005L44.77722635447622 0 36.25722635447622 4.5600000000000005Q35.17722635447622 5.25 35.17722635447622 4.65V1.7399999999999998H1Q-1 1.7399999999999998 -1 0Q-1 -1.7399999999999998 1 -1.7399999999999998Z" fill="url(#arrow-spin)" stroke="url(#arrow-spin)" stroke-width=".5"/><path d="M4 -0.96H33.17722635447622" fill="none" stroke="#fff" stroke-opacity=".56" stroke-width=".65"/></g>
+<text x="81" y="318" font-size="18" font-weight="700" fill="#246782">Spin polarization  σ ∥ y</text>
+<g transform="translate(94 342) rotate(6.832361677416983)"><path d="M1 -2.6679999999999997H203.83205329623422V-7.13Q203.83205329623422 -8.049999999999999 205.48805329623423 -6.991999999999999L218.55205329623422 0 205.48805329623423 6.991999999999999Q203.83205329623422 8.049999999999999 203.83205329623422 7.13V2.6679999999999997H1Q-1 2.6679999999999997 -1 0Q-1 -2.6679999999999997 1 -2.6679999999999997Z" transform="translate(0 2)" fill="var(--edge)" opacity=".24"/><path d="M1 -2.6679999999999997H203.83205329623422V-7.13Q203.83205329623422 -8.049999999999999 205.48805329623423 -6.991999999999999L218.55205329623422 0 205.48805329623423 6.991999999999999Q203.83205329623422 8.049999999999999 203.83205329623422 7.13V2.6679999999999997H1Q-1 2.6679999999999997 -1 0Q-1 -2.6679999999999997 1 -2.6679999999999997Z" fill="url(#arrow-current)" stroke="url(#arrow-current)" stroke-width=".5"/><path d="M4 -1.472H201.83205329623422" fill="none" stroke="#fff" stroke-opacity=".56" stroke-width=".65"/></g>
+<text x="204" y="392" text-anchor="middle" font-size="15" font-weight="700" fill="#804965">Charge current +x</text>
+</g><g transform="translate(495 114)" style="--edge:#8c4f29">
+<rect width="422" height="406" rx="20" fill="#d6e2e9" opacity=".46" transform="translate(0 3)"/>
+<rect width="422" height="406" rx="20" fill="url(#card)" stroke="#c8d9e4"/>
+<path d="M20 1h382" stroke="#fff" stroke-width="2" opacity=".85"/>
+<text x="211" y="50" text-anchor="middle" font-size="26" font-weight="700" fill="#8c4f29">Orbital Hall effect</text>
+<ellipse cx="214" cy="283" rx="137" ry="30" fill="#b1c6d6" opacity=".29"/>
+<g stroke-width="1.4" stroke-linejoin="round">
+ <path d="M65 206 257 229 344 181 152 158Z" fill="url(#channelTop)" stroke="#86a8bb"/>
+ <path d="M65 206v67l192 23v-67Z" fill="url(#channelFace)" stroke="#7c9fb7"/>
+ <path d="m257 229 87-48v67l-87 48Z" fill="url(#channelEdge)" stroke="#6e94aa"/>
+ <path d="m107 171 150 18 65-36-150-18Z" fill="url(#freeTop)" stroke="#86b5ad"/>
+ <path d="M107 171v32l150 18v-32Z" fill="url(#freeFace)" stroke="#82a9a5"/>
+ <path d="m257 189 65-36v31l-65 37Z" fill="#86adb0" stroke="#769995"/>
+ <path d="M68 208l188 23m3-2 82-45M111 170l144 18" stroke="#e5f6ff" fill="none" opacity=".8"/>
+</g>
+<path d="M252 131h51" stroke="#628681" fill="none"/>
+<text x="307" y="135" font-size="14" font-weight="700" fill="#426666">Free layer</text>
+<path d="M285 263l32 11" stroke="#6686a3" fill="none"/>
+<text x="318" y="293" font-size="14" font-weight="700" fill="#456580">Write channel</text>
+<g transform="translate(216 163) rotate(-90)"><path d="M1 -3.9439999999999995H46.239999999999995V-10.54Q46.239999999999995 -11.9 48.687999999999995 -10.336L68 0 48.687999999999995 10.336Q46.239999999999995 11.9 46.239999999999995 10.54V3.9439999999999995H1Q-1 3.9439999999999995 -1 0Q-1 -3.9439999999999995 1 -3.9439999999999995Z" transform="translate(0 2)" fill="var(--edge)" opacity=".24"/><path d="M1 -3.9439999999999995H46.239999999999995V-10.54Q46.239999999999995 -11.9 48.687999999999995 -10.336L68 0 48.687999999999995 10.336Q46.239999999999995 11.9 46.239999999999995 10.54V3.9439999999999995H1Q-1 3.9439999999999995 -1 0Q-1 -3.9439999999999995 1 -3.9439999999999995Z" fill="url(#arrow-ink)" stroke="url(#arrow-ink)" stroke-width=".5"/><path d="M4 -2.176H44.239999999999995" fill="none" stroke="#fff" stroke-opacity=".56" stroke-width=".65"/></g>
+<text x="228" y="108" font-size="19" font-weight="700" fill="#285d59">M<tspan dy="4" font-size="13">z</tspan></text>
+<path d="M261 255C221 251 192 254 169 242S141 211 137 187" fill="none" stroke="#a85f2a" stroke-opacity=".19" stroke-width="9" stroke-linecap="round"/>
+<path d="M261 255C221 251 192 254 169 242S141 211 137 187m-4 9 4-9 7 6" fill="none" stroke="#a85f2a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M261 255C219 253 185 251 161 256S133 267 119 273" fill="none" stroke="#a85f2a" stroke-width="1.5" stroke-dasharray="4 5" opacity=".66"/>
+<g transform="translate(123 244)">
+<ellipse cx="0" cy="9" rx="21" ry="6" fill="#62351d" opacity=".14"/>
+<g transform="rotate(-32)">
+<ellipse cx="-11" cy="0" rx="14" ry="7.4" fill="url(#lobe)" opacity=".83"/>
+<ellipse cx="11" cy="0" rx="15" ry="8.5" fill="url(#lobe)" stroke="#edbd80" stroke-width=".6"/>
+<circle r="3.8" fill="#ffe5aa"/>
+</g></g>
+<g transform="translate(131 240) rotate(-29.42745640318974)"><path d="M1 -1.7399999999999998H35.17722635447622V-4.65Q35.17722635447622 -5.25 36.25722635447622 -4.5600000000000005L44.77722635447622 0 36.25722635447622 4.5600000000000005Q35.17722635447622 5.25 35.17722635447622 4.65V1.7399999999999998H1Q-1 1.7399999999999998 -1 0Q-1 -1.7399999999999998 1 -1.7399999999999998Z" transform="translate(0 2)" fill="var(--edge)" opacity=".24"/><path d="M1 -1.7399999999999998H35.17722635447622V-4.65Q35.17722635447622 -5.25 36.25722635447622 -4.5600000000000005L44.77722635447622 0 36.25722635447622 4.5600000000000005Q35.17722635447622 5.25 35.17722635447622 4.65V1.7399999999999998H1Q-1 1.7399999999999998 -1 0Q-1 -1.7399999999999998 1 -1.7399999999999998Z" fill="url(#arrow-orb)" stroke="url(#arrow-orb)" stroke-width=".5"/><path d="M4 -0.96H33.17722635447622" fill="none" stroke="#fff" stroke-opacity=".56" stroke-width=".65"/></g>
+<text x="81" y="318" font-size="18" font-weight="700" fill="#8c4f29">Orbital polarization  L ∥ y</text>
+<g transform="translate(94 342) rotate(6.832361677416983)"><path d="M1 -2.6679999999999997H203.83205329623422V-7.13Q203.83205329623422 -8.049999999999999 205.48805329623423 -6.991999999999999L218.55205329623422 0 205.48805329623423 6.991999999999999Q203.83205329623422 8.049999999999999 203.83205329623422 7.13V2.6679999999999997H1Q-1 2.6679999999999997 -1 0Q-1 -2.6679999999999997 1 -2.6679999999999997Z" transform="translate(0 2)" fill="var(--edge)" opacity=".24"/><path d="M1 -2.6679999999999997H203.83205329623422V-7.13Q203.83205329623422 -8.049999999999999 205.48805329623423 -6.991999999999999L218.55205329623422 0 205.48805329623423 6.991999999999999Q203.83205329623422 8.049999999999999 203.83205329623422 7.13V2.6679999999999997H1Q-1 2.6679999999999997 -1 0Q-1 -2.6679999999999997 1 -2.6679999999999997Z" fill="url(#arrow-current)" stroke="url(#arrow-current)" stroke-width=".5"/><path d="M4 -1.472H201.83205329623422" fill="none" stroke="#fff" stroke-opacity=".56" stroke-width=".65"/></g>
+<text x="204" y="392" text-anchor="middle" font-size="15" font-weight="700" fill="#804965">Charge current +x</text>
+</g>
+</g></svg>

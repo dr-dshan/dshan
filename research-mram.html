@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>In-Memory Computing for AI Inference | AED Lab</title>
+
+  <link rel="stylesheet" href="./style.css">
+
+  <meta name="description" content="From magnetic tunnel junctions to memory arrays that participate in computation.">
+  <link rel="stylesheet" href="./research-aed.css">
+
+  
+
+  <link rel="stylesheet" href="header-brand.css">
+
+  <style id="unified-mobile-nav">
+    /* Unified mobile/tablet navigation; desktop navigation is unchanged. */
+    .mobile-menu-toggle{
+      display:none; appearance:none; border:0; background:transparent;
+      color:inherit; font:inherit; cursor:pointer; padding:8px; margin-left:auto; line-height:1;
+    }
+    .mobile-menu-toggle .bar{
+      display:block; width:24px; height:2px; margin:5px 0;
+      background:currentColor; border-radius:2px;
+    }
+    @media (max-width:900px){
+      .site-header .nav,.header .header-inner{
+        position:relative; display:flex; align-items:center;
+        justify-content:space-between; flex-wrap:wrap;
+      }
+      .mobile-menu-toggle{display:block;}
+      .site-header .menu,.header .menu{
+        display:none !important; width:100%; flex-direction:column;
+        align-items:stretch; gap:0; padding:10px 0 14px;
+      }
+      .site-header .menu.is-open,.header .menu.is-open{display:flex !important;}
+      .site-header .menu a,.header .menu a{
+        display:block; width:100%; padding:12px 4px;
+        border-bottom:1px solid rgba(255,255,255,.08);
+      }
+    }
+  </style>
+
+  <noscript><style>.site-header .menu#mobile-main-menu {display:flex !important}.site-header .mobile-menu-toggle {display:none}</style></noscript>
+</head>
+
+<body>
+  <a class="aed-skip" href="#research-main">Skip to research content</a>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+
+      <a class="brand brand-logo" href="./" aria-label="DS Han Lab. Home">
+      <img
+        src="./Images/Logo/ds-han-lab-logo.png"
+        alt="DS Han Lab."
+      >
+    </a>
+
+      <button class="mobile-menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-main-menu">
+  <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+</button>
+
+      <div class="menu" id="mobile-main-menu">
+        <a href="./">HOME</a>
+        <a href="research.html" aria-current="page">RESEARCH</a>
+        <a href="people.html">PEOPLE</a>
+        <a href="publications.html">RESEARCH OUTPUTS</a>
+        <a href="news.html">NEWS</a>
+        <a href="mailto:dshan@kist.re.kr">CONTACT</a>
+      
+        <a href="#" data-private-route="/wiki">WIKI</a>
+      </div>
+
+    </nav>
+  </header>
+
+  <main class="research-main" data-research-theme="computing" id="research-main" tabindex="-1">
+    <section class="aed-project-hero" aria-labelledby="project-title">
+      <img src="./Images/Projects/mram-array-cover.svg" alt="" width="900" height="540" fetchpriority="high">
+      <div class="container">
+        <a href="./research.html#computing">← Back to Research</a>
+        <h1 id="project-title">In-Memory Computing for AI Inference</h1>
+      </div>
+    </section>
+    <div class="container aed-body">
+      <div class="aed-project-detail-layout">
+        <article class="aed-project-main">
+          <p class="lead">MRAM stores neural-network weights and uses those same cells to perform the multiply-accumulate operations behind AI inference.</p>
+          <section class="aed-methods" aria-labelledby="research-focus"><h2 id="research-focus">Research Focus</h2>
+            <p class="aed-focus-intro">Store neural-network weights in MRAM and compute dot products inside the array.</p>
+            <div class="aed-subsections">
+              <section><h3>Why compute in memory?</h3><p>Inference repeatedly fetches weights to calculate dot products. Computing inside the array reduces those transfers and sends scores to the next stage.</p></section>
+              <section><h3>Why MRAM?</h3><p>Magnetic tunnel junctions retain weights without power, support repeated writes, and offer two resistance states for binary weights. Low cell resistance can draw substantial current in a conventional current-summing crossbar.</p></section>
+              <section><h3>How the MRAM array computes</h3><p>The input selects an MTJ path to encode a match or mismatch. A sense circuit reads the sum of resistances in each column as a dot-product score.</p></section>
+              <section><h3>What we evaluate</h3><p>Compare inference accuracy, energy and latency, including the input drivers, sensing circuits and any weight reprogramming.</p></section>
+            </div>
+          </section>
+          <section class="aed-methods" aria-labelledby="project-visual"><h2 id="project-visual">Interactive Illustration</h2><figure class="aed-art" data-scene="2"><div class="aed-art-stage"><canvas role="img" aria-label="Two complementary MTJ paths encode binary multiplication; series-connected cells sum resistances to generate dot-product scores." width="640" height="420">Magnetic tunnel junction</canvas></div><figcaption><p>Follow a binary inference example. A row input selects one of two MTJ paths per cell. Each column adds the selected resistances, and a sense circuit reads the resulting dot product.</p></figcaption></figure></section>
+          <section class="aed-methods" aria-labelledby="project-impact"><h2 id="project-impact">Impact</h2><p>Multiply-accumulate (MAC) operations are at the core of neural network inference. Storing weights in nonvolatile MRAM and performing MAC operations inside the array can reduce the need to move weights between memory and compute units, especially in power-constrained edge devices. The practical benefit depends on the energy and accuracy of the full circuit, including sensing and conversion.</p></section>
+        </article>
+        <aside class="aed-project-sidebar" aria-label="Project information">
+          <section class="aed-sidebar-card"><h2>Team Members</h2><ul class="aed-project-people" aria-label="AED Lab research team"><li>Dr. Dong-Soo Han (PI)</li><li>Mr. Hanwool Seong</li><li>Ms. Yu-Jeong Jung</li></ul></section>
+          <section class="aed-sidebar-card aed-publications"><h2>Related Publications</h2><ul class="aed-paper-list">
+<li><span class="aed-paper-title">Reconfigurable Boolean Logic Operations in Spin-Orbit Torque MRAM</span><span class="aed-paper-venue">ACS Applied Electronic Materials (accepted)</span></li>
+</ul></section>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+      <div>
+        <strong>Advanced Electronic Devices Lab (AED Lab.)</strong><br>
+        Center for Semiconductor Technology, KIST
+      </div>
+
+      <div>
+        <strong>Contact</strong><br>
+        dshan@kist.re.kr · +82-2-958-5405
+      </div>
+
+      <div>
+        © 2026 Dong-Soo Han
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="./research-3d.js" defer></script>
+  <script src="./research-aed.js" defer></script>
+
+  
+<script id="unified-mobile-nav-script">
+(function(){
+  const toggle=document.querySelector('.mobile-menu-toggle');
+  const menu=document.querySelector('.site-header .menu, .header .menu');
+  if(!toggle||!menu)return;
+  toggle.addEventListener('click',function(){
+    const open=menu.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded',open?'true':'false');
+    toggle.setAttribute('aria-label',open?'Close menu':'Open menu');
+  });
+  menu.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape' && menu.classList.contains('is-open')) {
+      toggle.click();
+      toggle.focus();
+    }
+  });
+  menu.querySelectorAll('a').forEach(function(link){
+    link.addEventListener('click',function(){
+      if(window.innerWidth<=900){
+        menu.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded','false');
+        toggle.setAttribute('aria-label','Open menu');
+      }
+    });
+  });
+  window.addEventListener('resize',function(){
+    if(window.innerWidth>900){
+      menu.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded','false');
+      toggle.setAttribute('aria-label','Open menu');
+    }
+  });
+})();
+</script>
+
+  <script src="./research-image-menu.js" defer></script>
+  <script src="./private-app-config.js"></script>
+</body>
+</html>
